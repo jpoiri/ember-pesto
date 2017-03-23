@@ -1,0 +1,74 @@
+{{mx-label class=labelClass value=label for=inputId visible=labelVisible}}
+
+{{#if inline}}
+	<div>
+		{{#each sortedItems as |item index|}}
+
+			{{#if autoFocus}}
+
+				{{mx-radio-button-inline
+						  required=required
+						  requiredMessage=requiredMessage
+						  value=(get item itemValueProperty)
+						  label=(get item itemLabelProperty)
+						  groupValue=value
+						  autoFocus=(if (eq index 0) true false)
+						  name=groupName
+						  disabled=disabled
+						  valueChangeAction=(action "valueChangeAction")}}
+
+			{{else}}
+
+				{{mx-radio-button-inline
+						  required=required
+						  requiredMessage=requiredMessage
+						  value=(get item itemValueProperty)
+						  label=(get item itemLabelProperty)
+						  groupValue=value
+						  name=groupName
+						  disabled=disabled
+						  valueChangeAction=(action "valueChangeAction")}}
+			{{/if}}
+
+		{{/each}}
+
+		{{yield (hash radio-button=(component "pesto-radio-button-inline"
+				  required=required
+				  requiredMessage=requiredMessage
+				  groupValue=value
+				  disabled=disabled
+				  name=groupName
+				  valueChangeAction=(action "valueChangeAction"))
+							 validator=(component "pesto-validator" validationSelector=validationSelector))}}
+	</div>
+{{else}}
+
+	{{#each sortedItems as |item index|}}
+
+		{{mx-radio-button
+				  required=required
+				  requiredMessage=requiredMessage
+				  value=(get item itemValueProperty)
+				  label=(get item itemLabelProperty)
+				  groupValue=value
+				  name=groupName
+				  autoFocus=(if (and autoFocus (eq index 0)) true false)
+				  disabled=disabled
+				  valueChangeAction=(action "valueChangeAction")}}
+
+	{{/each}}
+
+	{{yield (hash radio-button=(component "pesto-radio-button"
+			  required=required
+			  requiredMessage=requiredMessage
+			  groupValue=value
+			  disabled=disabled
+			  name=groupName
+			  valueChangeAction=(action "valueChangeAction"))
+						 validator=(component "pesto-validator" validationSelector=validationSelector))}}
+{{/if}}
+
+
+
+
+

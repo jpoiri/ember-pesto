@@ -1,0 +1,150 @@
+{{mx-label class=labelClass value=label for=inputId visible=labelVisible}}
+
+{{#if inputWidthClass}}
+	<div class="{{inputWidthClass}}">
+		{{input id=inputId
+				  value=value
+				  focus-in="focusIn"
+				  focus-out="focusOut"
+				  key-press="keyPress"
+				  key-down="keyDown"
+				  key-up="keyUp"
+				  autocomplete=autoComplete
+				  autofocus=autoFocus
+				  disabled=disabled
+				  form=form
+				  formnovalidate=formNoValidate
+				  multiple=multiple
+				  name=name
+				  placeholder=placeholder
+				  readonly=readOnly
+				  size=size
+				  step=step
+				  accesskey=accessKey
+				  contenteditable=contentEditable
+				  contextmenu=contextMenu
+				  dir=dir
+				  draggable=draggable
+				  dropzone=dropZone
+				  hidden=hidden
+				  lang=lang
+				  spellcheck=spellCheck
+				  required=required
+				  tabindex=tabIndex
+				  title=title
+				  translate=translate
+				  data-test-automation-id=testAutomationId
+				  data-parsley-required=required
+				  data-parsley-type=validationType
+				  type=htmlType
+				  data-parsley-required-message=requiredMessageComputed
+				  data-parsley-type-message=typeMessage
+				  data-parsley-minlength=minimumLength
+				  minlength=minimumLength
+				  data-parsley-minlength-message=minimumLengthMessageComputed
+				  data-parsley-maxlength=maximumLength
+				  maxlength=maximumLength
+				  data-parsley-maxlength-message=maximumLengthMessageComputed
+				  data-parsley-length=lengthRange
+				  data-parsley-length-message=lengthMessage
+				  min=minimumValue
+				  data-parsley-min=minimumValue
+				  data-parsley-min-message=minimumValueMessageComputed
+				  max=maximumValue
+				  data-parsley-max=maximumValue
+				  data-parsley-max-message=maximumValueMessageComputed
+				  data-parsley-range=range
+				  data-parsley-range-message=rangeMessage
+				  pattern=pattern
+				  class=(concat "form-control " inputClass)
+				  data-parsley-pattern=pattern
+				  data-parsley-pattern-message=patternMessage
+				  data-parsley-equalto=equalToComputed
+				  data-parsley-equalto-message=equalToMessage
+				  data-parsley-validate-if-empty=validateIfEmptyComputed
+				  data-parsley-trigger=validationTriggerComputed
+				  data-parsley-trigger-after-failure=validationTriggerAfterFailureComputed
+				  data-parsley-group=validationGroup
+				  data-parsley-class-handler=validationClassHandlerComputed
+				  data-parsley-validation-threshold=validationThreshold
+				  data-parsley-errors-container=errorMessagesContainerComputed
+				  data-parsley-error-message=errorMessage
+		}}
+
+	</div>
+{{else}}
+	{{input id=inputId
+			  value=value
+			  focus-in="focusIn"
+			  focus-out="focusOut"
+			  key-press="keyPress"
+			  key-down="keyDown"
+			  key-up="keyUp"
+			  autocomplete=autoComplete
+			  autofocus=autoFocus
+			  disabled=disabled
+			  form=form
+			  formnovalidate=formNoValidate
+			  multiple=multiple
+			  name=name
+			  placeholder=placeholder
+			  readonly=readOnly
+			  size=size
+			  step=step
+			  accesskey=accessKey
+			  contenteditable=contentEditable
+			  contextmenu=contextMenu
+			  dir=dir
+			  draggable=draggable
+			  dropzone=dropZone
+			  hidden=hidden
+			  lang=lang
+			  spellcheck=spellCheck
+			  required=required
+			  tabindex=tabIndex
+			  title=title
+			  translate=translate
+			  data-test-automation-id=testAutomationId
+			  data-parsley-required=required
+			  data-parsley-type=validationType
+			  type=htmlType
+			  data-parsley-required-message=requiredMessageComputed
+			  data-parsley-type-message=typeMessage
+			  data-parsley-minlength=minimumLength
+			  minlength=minimumLength
+			  data-parsley-minlength-message=minimumLengthMessageComputed
+			  data-parsley-maxlength=maximumLength
+			  maxlength=maximumLength
+			  data-parsley-maxlength-message=maximumLengthMessageComputed
+			  data-parsley-length=lengthRange
+			  data-parsley-length-message=lengthMessage
+			  min=minimumValue
+			  data-parsley-min=minimumValue
+			  data-parsley-min-message=minimumValueMessageComputed
+			  max=maximumValue
+			  data-parsley-max=maximumValue
+			  data-parsley-max-message=maximumValueMessageComputed
+			  data-parsley-range=range
+			  data-parsley-range-message=rangeMessage
+			  pattern=pattern
+			  class=(concat "form-control " inputClass)
+			  data-parsley-pattern=pattern
+			  data-parsley-pattern-message=patternMessage
+			  data-parsley-equalto=equalToComputed
+			  data-parsley-equalto-message=equalToMessage
+			  data-parsley-validate-if-empty=validateIfEmptyComputed
+			  data-parsley-trigger=validationTriggerComputed
+			  data-parsley-trigger-after-failure=validationTriggerAfterFailureComputed
+			  data-parsley-group=validationGroup
+			  data-parsley-class-handler=validationClassHandlerComputed
+			  data-parsley-validation-threshold=validationThreshold
+			  data-parsley-errors-container=errorMessagesContainerComputed
+			  data-parsley-error-message=errorMessage
+	}}
+{{/if}}
+
+{{#if helpText}}
+	<span id="helpBlock" class="help-block">{{helpText}}</span>
+{{/if}}
+
+{{yield (hash validator=(component "pesto-validator" validationSelector=validationSelector))}}

@@ -1,0 +1,19 @@
+{{#if iconClass}}
+	{{#if isIconLeft}}
+		{{#if label}}
+			<i class="{{iconClass}} icon-left"></i>
+			{{label}}
+		{{else}}
+			<i class="{{iconClass}}"></i>
+		{{/if}}
+	{{else}}
+		{{#if label}}
+			{{label}}
+			<i class="{{iconClass}} icon-right"></i>
+		{{else}}
+			<i class="{{iconClass}}"></i>
+		{{/if}}
+	{{/if}}
+{{else}}
+	{{label}}
+{{/if}}

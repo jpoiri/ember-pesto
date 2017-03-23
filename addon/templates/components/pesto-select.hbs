@@ -1,0 +1,41 @@
+{{mx-label class=labelClass value=label for=inputId visible=labelVisible}}
+
+<select name={{name}} tabindex={{tabindex}} autofocus={{autoFocus}} form={{form}} multiple={{multiple}} size={{size}}
+		  contenteditable={{contentdEditable}} contextmenu={{contextMenu}} dir={{dir}} draggable={{draggable}}
+		  disabled={{disabled}} accesskey={{accessKey}} dropzone={{dropzone}} id="{{inputId}}"
+		  required={{required}} hidden={{hidden}} title={{title}} translate={{translate}}
+		  spellcheck={{spellcheck}} lang={{lang}} class="form-control {{inputClass}}"
+		  data-parsley-required={{required}}
+					 data-parsley-required-message={{requiredMessageComputed}}
+		  data-parsley-equalto={{equalToSelector}}
+					 data-parsley-equalto-message={{equalToMessage}}
+		  data-parsley-validate-if-empty={{validateIfEmptyComputed}}
+					 data-parsley-trigger={{validationTriggerComputed}}
+		  data-parsley-trigger-after-failure={{validationTriggerAfterFailureComputed}}
+					 data-parsley-group={{validationGroup}}
+		  data-parsley-class-handler={{validationClassHandlerComputed}}
+					 data-parsley-validation-threshold={{validationThreshold}}
+		  data-parsley-errors-container={{errorMessagesContainerComputed}}
+					 data-parsley-error-message={{errorMessage}}
+		  data-test-automation-id={{testAutomationId}}>
+
+	{{#if placeholder}}
+		{{pesto-option value="" label=placeholder selected=true disabled=true}}
+	{{/if}}
+
+	{{#each sortedItems as |item|}}
+		{{pesto-option
+				  value=(get item itemValueProperty)
+				  disabled=(get item itemDisabledProperty)
+				  selected=(eq value (get item itemValueProperty))
+				  label=(get item itemLabelProperty)}}
+	{{/each}}
+
+	{{yield (hash validator=(component "pesto-validator" validationSelector=validationSelector)
+						 option=(component "pesto-option"))}}
+
+</select>
+
+{{#unless isEqualToNone}}
+	<input id="{{equalToInputId}}" type="hidden" value="{{equalTo}}">
+{{/unless}}

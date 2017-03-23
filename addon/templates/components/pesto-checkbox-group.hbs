@@ -1,0 +1,81 @@
+{{mx-label class=labelClass value=label for=inputId visible=labelVisible}}
+
+{{#if inline}}
+	<div>
+		{{#each sortedItems as |item index|}}
+
+			{{mx-checkbox-inline
+					  required=required
+					  requiredMessage=requiredMessage
+					  value=(get item itemValueProperty)
+					  label=(get item itemLabelProperty)
+					  group=true
+					  groupValue=value
+					  name=groupName
+					  autoFocus=(if (and autoFocus (eq index 0)) true false)
+					  minimumChecked=minimumChecked
+					  minimumCheckedMessage=minimumCheckedMessage
+					  maximumChecked=maximumChecked
+					  maximumCheckedMessage=maximumCheckedMessage
+					  checkedRange=checkedRange
+					  checkedRangeMessage=checkedRangeMessage
+					  disabled=(get item itemDisabledProperty)
+					  valueChangeAction=(action "valueChangeAction")}}
+
+
+		{{/each}}
+
+		{{yield (hash radio-button=(component "pesto-checkbox-inline"
+				  required=required
+				  requiredMessage=requiredMessage
+				  groupValue=value
+				  group=true
+				  name=groupName
+				  minimumChecked=minimumChecked
+				  minimumCheckedMessage=minimumCheckedMessage
+				  maximumChecked=maximumChecked
+				  maximumCheckedMessage=maximumCheckedMessage
+				  checkedRange=checkedRange
+				  checkedRangeMessage=checkedRangeMessage
+				  valueChangeAction=(action "valueChangeAction"))
+							 validator=(component "pesto-validator" type="array" validationSelector=validationSelector))}}
+	</div>
+{{else}}
+
+	{{#each sortedItems as |item index|}}
+
+		{{mx-checkbox
+				  required=required
+				  requiredMessage=requiredMessage
+				  value=(get item itemValueProperty)
+				  label=(get item itemLabelProperty)
+				  groupValue=value
+				  group=true
+				  name=groupName
+				  autoFocus=(if (and autoFocus (eq index 0)) true false)
+				  minimumChecked=minimumChecked
+				  minimumCheckedMessage=minimumCheckedMessage
+				  maximumChecked=maximumChecked
+				  maximumCheckedMessage=maximumCheckedMessage
+				  checkedRange=checkedRange
+				  checkedRangeMessage=checkedRangeMessage
+				  disabled=(get item itemDisabledProperty)
+				  valueChangeAction=(action "valueChangeAction")}}
+
+	{{/each}}
+
+	{{yield (hash checkbox=(component "pesto-checkbox"
+			  required=required
+			  requiredMessage=requiredMessage
+			  groupValue=value
+			  group=true
+			  name=groupName
+			  minimumChecked=minimumChecked
+			  minimumCheckedMessage=minimumCheckedMessage
+			  maximumChecked=maximumChecked
+			  maximumCheckedMessage=maximumCheckedMessage
+			  checkedRange=checkedRange
+			  checkedRangeMessage=checkedRangeMessage
+			  valueChangeAction=(action "valueChangeAction"))
+						 validator=(component "pesto-validator" type="array" validationSelector=validationSelector))}}
+{{/if}}

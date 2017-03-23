@@ -1,0 +1,67 @@
+
+{{#if group}}
+	<label aria-label="{{unless labelVisible label ''}}">
+		{{input
+				  type="checkbox"
+				  role="checkbox"
+				  id=inputId
+				  name=name
+				  checked=checked
+				  disabled=disabled
+				  tabindex=tabIndex
+				  indeterminate=indeterminate
+				  autofocus=autoFocus
+				  required=required
+				  form=form
+				  aria-checked=checked
+				  data-parsley-mincheck=minimumChecked
+				  data-parsley-mincheck-message=minimumCheckedMessageComputed
+				  data-parsley-maxcheck=maximumChecked
+				  data-parsley-maxcheck-message=maximumCheckedMessageComputed
+				  data-parsley-check=checkedRange
+				  data-parsley-check-message=checkedRangeMessage
+				  data-test-automation-id=testAutomationId
+				  data-parsley-group=validationGroup
+				  data-parsley-class-handler=validationClassHandlerComputed
+				  data-parsley-errors-container=errorMessagesContainerComputed
+				  data-parsley-error-message=errorMessage
+				  data-parsley-required=required
+				  data-parsley-required-message=requiredMessage}}
+
+		{{#if labelVisible}}
+			{{label}}
+		{{/if}}
+	</label>
+{{else}}
+	<div class="checkbox {{if disabled 'disabled' ''}}">
+		<label aria-label="{{unless labelVisible label ''}}">
+			{{input
+					  type="checkbox"
+					  role="checkbox"
+					  id=inputId
+					  name=name
+					  checked=checked
+					  disabled=disabled
+					  tabindex=tabIndex
+					  indeterminate=indeterminate
+					  autofocus=autoFocus
+					  required=required
+					  form=form
+					  aria-checked=value
+					  data-test-automation-id=testAutomationId
+					  data-parsley-group=validationGroup
+					  data-parsley-class-handler=validationClassHandlerComputed
+					  data-parsley-errors-container=errorMessagesContainerComputed
+					  data-parsley-error-message=errorMessage
+					  data-parsley-required=required
+					  data-parsley-required-message=requiredMessage}}
+
+			{{#if labelVisible}}
+				{{label}}
+			{{/if}}
+		</label>
+	</div>
+{{/if}}
+
+
+{{yield (hash validator=(component "pesto-validator" type="array" validationSelector=validationSelector))}}

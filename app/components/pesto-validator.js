@@ -1,0 +1,1 @@
+export { default } from 'ember-pesto/components/pesto-validator';

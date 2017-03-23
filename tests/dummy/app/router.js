@@ -7,6 +7,14 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('pesto-input');
+  this.route('pesto-textarea');
+  this.route('pesto-select');
+  this.route('pesto-checkbox');
+  this.route('pesto-checkbox-group');
+  this.route('pesto-radio-button-group');
+  this.route('pesto-button');
+  this.route('pesto-form');
 });
 
 export default Router;

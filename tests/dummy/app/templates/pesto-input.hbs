@@ -1,1 +1,30 @@
-{{outlet}}
+
+	<h1>pesto-input</h1>
+
+	<h2>options</h2>
+
+	<h3>label</h3>
+
+	<p>sadsad</p>
+
+	<ul class="nav nav-pills">
+		<li role="presentation" class="active">
+			<a href="#run" aria-controls="run" role="tab" data-toggle="tab">Run</a>
+		</li>
+		<li role="presentation">
+			<a href="#source" aria-controls="source" role="tab" data-toggle="tab">Source</a>
+		</li>
+	</ul>
+
+	<!-- Tab panes -->
+	<div class="tab-content">
+		<div role="tabpanel" class="tab-pane active" id="run">
+			{{!-- BEGIN-SNIPPET pesto-label-input --}}
+				{{pesto-input label="My input" required=true requiredMessage="this field is required"}}
+			{{!-- END-SNIPPET --}}
+		</div>
+		<div role="tabpanel" class="tab-pane" id="source">
+			{{code-snippet name="pesto-label-input.hbs"}}
+		</div>
+	</div>
+

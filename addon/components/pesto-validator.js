@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import layout from '../templates/components/pesto-validator';
 
 /**
  * This component is responsible to handle adding parsley custom validator.
@@ -39,7 +38,7 @@ export default Ember.Component.extend({
 				en: '' + this.get('message'),
 				fr: '' + this.get('message')
 			}
-		}
+		};
 	},
 
 	/**
@@ -60,7 +59,7 @@ export default Ember.Component.extend({
 				en: '' + this.get('message'),
 				fr: '' + this.get('message')
 			}
-		}
+		};
 	},
 
 	/**
@@ -81,7 +80,7 @@ export default Ember.Component.extend({
 				en: '' + this.get('message'),
 				fr: '' + this.get('message')
 			}
-		}
+		};
 	},
 
 	/**

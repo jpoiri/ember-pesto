@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/pesto-input';
+import ParsleyMixin from '../mixins/pesto-parsley-mixin';
 import InputMixin from '../mixins/pesto-input-mixin';
 
 /**

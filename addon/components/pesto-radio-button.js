@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/pesto-radio-button';
-import MxParsleyMixin from '../mixins/pesto-parsley-mixin';
+import ParsleyMixin from '../mixins/pesto-parsley-mixin';
 
 
 /**

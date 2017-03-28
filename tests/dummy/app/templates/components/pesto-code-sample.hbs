@@ -1,0 +1,20 @@
+<ul class="nav nav-pills">
+	<li role="presentation" class="active">
+		<a href="#run" aria-controls="run" role="tab" data-toggle="tab">Run</a>
+	</li>
+	<li role="presentation">
+		<a href="#source" aria-controls="source" role="tab" data-toggle="tab">Source</a>
+	</li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane active" id="run">
+		{{!-- BEGIN-SNIPPET elementId --}}
+			{{yield}}
+		{{!-- END-SNIPPET --}}
+	</div>
+	<div role="tabpanel" class="tab-pane" id="source">
+		{{code-snippet name=(concat "elementId.hbs")}}
+	</div>
+</div>

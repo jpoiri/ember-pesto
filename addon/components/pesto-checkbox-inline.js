@@ -1,4 +1,3 @@
-import Ember from 'ember';
 import layout from '../templates/components/pesto-checkbox-inline';
 import PestoCheckbox from './pesto-checkbox';
 

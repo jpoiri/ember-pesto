@@ -1,4 +1,4 @@
-{{mx-label class=labelClass value=label for=inputId visible=labelVisible}}
+{{pesto-label class=labelClass value=label for=inputId visible=labelVisible}}
 
 <select name={{name}} tabindex={{tabindex}} autofocus={{autoFocus}} form={{form}} multiple={{multiple}} size={{size}}
 		  contenteditable={{contentdEditable}} contextmenu={{contextMenu}} dir={{dir}} draggable={{draggable}}
@@ -7,8 +7,6 @@
 		  spellcheck={{spellcheck}} lang={{lang}} class="form-control {{inputClass}}"
 		  data-parsley-required={{required}}
 					 data-parsley-required-message={{requiredMessageComputed}}
-		  data-parsley-equalto={{equalToSelector}}
-					 data-parsley-equalto-message={{equalToMessage}}
 		  data-parsley-validate-if-empty={{validateIfEmptyComputed}}
 					 data-parsley-trigger={{validationTriggerComputed}}
 		  data-parsley-trigger-after-failure={{validationTriggerAfterFailureComputed}}
@@ -35,7 +33,3 @@
 						 option=(component "pesto-option"))}}
 
 </select>
-
-{{#unless isEqualToNone}}
-	<input id="{{equalToInputId}}" type="hidden" value="{{equalTo}}">
-{{/unless}}

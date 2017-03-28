@@ -46,7 +46,7 @@ export default Ember.Component.extend(ParsleyMixin, {
 	 * if use in a group, the checkbox is only check if value is included in the array.
 	 */
 	checked: Ember.computed('groupValue', 'value', 'group', {
-		get(key) {
+		get() {
 			if (this.get('group')) {
 				if (Ember.isNone(this.get('groupValue'))) {
 					return false;

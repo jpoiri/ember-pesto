@@ -70,7 +70,6 @@ export default Ember.Component.extend(ParsleyMixin, {
 				return 'btn-danger';
 			case 'link':
 				return 'btn-link';
-			case 'default':
 			default:
 				return 'btn-default';
 		}

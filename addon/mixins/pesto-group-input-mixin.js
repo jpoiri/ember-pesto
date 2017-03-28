@@ -39,7 +39,7 @@ export default Ember.Mixin.create({
 	actions: {
 		valueChangeAction(value) {
 			if (!Ember.isNone(this.get('valueChangeAction'))) {
-				this.get('valueChangeAction')(this.get('value'));
+				this.get('valueChangeAction')(value);
 			}
 		}
 	}

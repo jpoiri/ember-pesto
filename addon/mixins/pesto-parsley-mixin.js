@@ -23,12 +23,6 @@ export default Ember.Mixin.create({
 		}
 	}),
 
-	requiredMessageComputed: Ember.computed('requiredMessage', function() {
-		if (this.get('requiredMessage')) {
-			return this.get('requiredMessage');
-		}
-		return `${this.get('i18n').t('mx.error.required')}`;
-	}),
 
 	validateIfEmptyComputed: Ember.computed('validateIfEmpty', function() {
 		if (this.get('validateIfEmpty')) {
@@ -220,35 +214,35 @@ export default Ember.Mixin.create({
 			Ember.$(validationSelector).parsley();
 			// Attach parsley event listeners.
 			if (Ember.$(validationSelector).is('form')) {
-				$(Ember.$(validationSelector).parsley().on('form:validate', () => {
+				Ember.$(validationSelector).parsley().on('form:validate', () => {
 					this.triggerBeforeValidationAction();
-				}));
-				$(Ember.$(validationSelector).parsley().on('form:validated', () => {
+				});
+				Ember.$(validationSelector).parsley().on('form:validated', () => {
 					this.triggerAfterValidationAction();
-				}));
-				$(Ember.$(validationSelector).parsley().on('form:success', () => {
+				});
+				Ember.$(validationSelector).parsley().on('form:success', () => {
 					this.triggerValidationStateChangeAction(true);
 					this.triggerValidationSuccessAction();
-				}));
-				$(Ember.$(validationSelector).parsley().on('form:error', () => {
+				});
+				Ember.$(validationSelector).parsley().on('form:error', () => {
 					this.triggerValidationStateChangeAction(false);
 					this.triggerValidationErrorAction();
-				}));
+				});
 			} else {
-				$(Ember.$(validationSelector).parsley().on('field:validate', () => {
+				Ember.$(validationSelector).parsley().on('field:validate', () => {
 					this.triggerBeforeValidationAction();
-				}));
-				$(Ember.$(validationSelector).parsley().on('field:validated', () => {
+				});
+				Ember.$(validationSelector).parsley().on('field:validated', () => {
 					this.triggerAfterValidationAction();
-				}));
-				$(Ember.$(validationSelector).parsley().on('field:success', () => {
+				});
+				Ember.$(validationSelector).parsley().on('field:success', () => {
 					this.triggerValidationStateChangeAction(true);
 					this.triggerValidationSuccessAction();
-				}));
-				$(Ember.$(validationSelector).parsley().on('field:error', () => {
+				});
+				Ember.$(validationSelector).parsley().on('field:error', () => {
 					this.triggerValidationStateChangeAction(false);
 					this.triggerValidationErrorAction();
-				}));
+				});
 			}
 		}
 	},
@@ -261,15 +255,15 @@ export default Ember.Mixin.create({
 		const validationSelector = this.get('validationSelector');
 		if (!Ember.isNone(validationSelector)) {
 			if (Ember.$(validationSelector).is('form')) {
-				$(Ember.$(validationSelector).parsley().off('form:success'));
-				$(Ember.$(validationSelector).parsley().off('form:error'));
-				$(Ember.$(validationSelector).parsley().off('form:validate'));
-				$(Ember.$(validationSelector).parsley().off('form:validated'));
+				Ember.$(validationSelector).parsley().off('form:success');
+				Ember.$(validationSelector).parsley().off('form:error');
+				Ember.$(validationSelector).parsley().off('form:validate');
+				Ember.$(validationSelector).parsley().off('form:validated');
 			} else {
-				$(Ember.$(validationSelector).parsley().off('field:success'));
-				$(Ember.$(validationSelector).parsley().off('field:error'));
-				$(Ember.$(validationSelector).parsley().off('field:validate'));
-				$(Ember.$(validationSelector).parsley().off('field:validated'));
+				Ember.$(validationSelector).parsley().off('field:success');
+				Ember.$(validationSelector).parsley().off('field:error');
+				Ember.$(validationSelector).parsley().off('field:validate');
+				Ember.$(validationSelector).parsley().off('field:validated');
 			}
 		}
 	},

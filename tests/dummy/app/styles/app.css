@@ -1,0 +1,29 @@
+* {
+font-family: 'Roboto', sans-serif;
+font-size: 1.7rem;
+
+}
+
+.tab-pane {
+    padding-top: 10px;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: mediumseagreen;
+}
+
+.h2, h2 {
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.h1, h1 {
+	font-size: 7rem;
+	font-weight: 300;
+    color: mediumseagreen;
+}
+
+.control-label {
+	font-weight: 400;
+}

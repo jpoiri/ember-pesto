@@ -43,34 +43,6 @@ export default Ember.Component.extend(ItemSortingMixin, ParsleyMixin, {
 	}),
 
 	/**
-	 * Returns the equalTo input id.
-	 * @returns {string}
-	 */
-	equalToInputId: Ember.computed('equalTo', function() {
-		if (!Ember.isNone(this.get('equalTo'))) {
-			return `${this.get('elementId')}-equal-to`;
-		}
-		return null;
-	}),
-
-	/**
-	 * Returns the JQuery selector that matches the element equalTo field.
-	 * @returns {string}
-	 */
-	equalToSelector: Ember.computed('equalTo', function() {
-		if (!Ember.isNone(this.get('equalTo'))) {
-			return `#${this.get('elementId')}-equal-to`;
-		}
-		return null;
-	}),
-
-	/**
-	 * Returns true if a equalTo argument is passed, otherwise returns false.
-	 * @returns {boolean}
-	 */
-	isEqualToNone: Ember.computed.none('equalTo'),
-
-	/**
 	 * Handle change event.
 	 */
 	change(event) {

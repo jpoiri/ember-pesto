@@ -1,30 +1,68 @@
+<h1>pesto-input</h1>
 
-	<h1>pesto-input</h1>
+<p>The pesto-input</p>
 
-	<h2>options</h2>
+<h2>Available options</h2>
 
-	<h3>label</h3>
+{{#pesto-code-sample
+		  optionName="autoComplete"
+		  type="Boolean"
+		  defaultValue="true"
+		  description="Turn on or off auto completion on the input"
+		  snippetName="pesto-input-autocomplete"}}
 
-	<p>sadsad</p>
+{{!-- BEGIN-SNIPPET pesto-input-autocomplete --}}
 
-	<ul class="nav nav-pills">
-		<li role="presentation" class="active">
-			<a href="#run" aria-controls="run" role="tab" data-toggle="tab">Run</a>
-		</li>
-		<li role="presentation">
-			<a href="#source" aria-controls="source" role="tab" data-toggle="tab">Source</a>
-		</li>
-	</ul>
+	{{pesto-input autoComplete=true}}
 
-	<!-- Tab panes -->
-	<div class="tab-content">
-		<div role="tabpanel" class="tab-pane active" id="run">
-			{{!-- BEGIN-SNIPPET pesto-label-input --}}
-				{{pesto-input label="My input" required=true requiredMessage="this field is required"}}
-			{{!-- END-SNIPPET --}}
-		</div>
-		<div role="tabpanel" class="tab-pane" id="source">
-			{{code-snippet name="pesto-label-input.hbs"}}
-		</div>
-	</div>
+{{!-- END-SNIPPET --}}
+
+{{/pesto-code-sample}}
+
+{{#pesto-code-sample
+		  optionName="autoFocus"
+		  type="Boolean"
+		  defaultValue="false"
+		  description="Automatically focus on input"
+		  snippetName="pesto-input-autofocus"}}
+
+{{!-- BEGIN-SNIPPET pesto-input-autofocus --}}
+
+	{{pesto-input autoFocus=true}}
+
+{{!-- END-SNIPPET --}}
+
+{{/pesto-code-sample}}
+
+{{#pesto-code-sample
+		  optionName="disabled"
+		  type="Boolean"
+		  defaultValue="false"
+		  description="Disable the input"
+		  snippetName="pesto-input-disabled"}}
+
+{{!-- BEGIN-SNIPPET pesto-input-disabled --}}
+
+	{{pesto-input disabled=true}}
+
+{{!-- END-SNIPPET --}}
+
+{{/pesto-code-sample}}
+
+{{#pesto-code-sample
+		  optionName="label"
+		  type="String"
+		  description="The label"
+		  snippetName="pesto-input-label"}}
+
+{{!-- BEGIN-SNIPPET pesto-input-label --}}
+
+	{{pesto-input label="My input"}}
+
+{{!-- END-SNIPPET --}}
+
+{{/pesto-code-sample}}
+
+
+
 

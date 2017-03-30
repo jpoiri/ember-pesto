@@ -1,20 +1,32 @@
+<h3>{{optionName}}</h3>
+
+<p>{{description}}</p>
+
+{{#if defaultValue}}
+	<p>Type: <code>{{type}}</code> Default Value: <code>{{defaultValue}}</code></p>
+{{else}}
+	<p>Type: <code>{{type}}</code></p>
+{{/if}}
+
 <ul class="nav nav-pills">
 	<li role="presentation" class="active">
-		<a href="#run" aria-controls="run" role="tab" data-toggle="tab">Run</a>
+		<a href={{concat "#" elementId "-run"}} aria-controls={{concat elementId "-run"}} role="tab" data-toggle="tab">
+			<i aria-hidden="true" class="fa fa-play"></i>    Run
+		</a>
 	</li>
 	<li role="presentation">
-		<a href="#source" aria-controls="source" role="tab" data-toggle="tab">Source</a>
+		<a href={{concat "#" elementId "-source"}} aria-controls={{concat elementId "-source"}} role="tab" data-toggle="tab">
+			<i aria-hidden="true" class="fa fa-code"></i>    Source
+		</a>
 	</li>
 </ul>
 
 <!-- Tab panes -->
 <div class="tab-content">
-	<div role="tabpanel" class="tab-pane active" id="run">
-		{{!-- BEGIN-SNIPPET elementId --}}
-			{{yield}}
-		{{!-- END-SNIPPET --}}
+	<div role="tabpanel" class="tab-pane active" id={{concat elementId "-run"}} >
+		{{yield}}
 	</div>
-	<div role="tabpanel" class="tab-pane" id="source">
-		{{code-snippet name=(concat "elementId.hbs")}}
+	<div role="tabpanel" class="tab-pane" id={{concat elementId "-source"}} >
+		{{code-snippet name=(concat snippetName ".hbs")}}
 	</div>
 </div>

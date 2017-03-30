@@ -350,6 +350,7 @@ export default Ember.Mixin.create({
 		}
 	},
 
+
 	/**
 	 * Returns the parsley context based on fields passed.
 	 * @param fields
@@ -439,5 +440,35 @@ export default Ember.Mixin.create({
 				return true;
 			}
 		};
-	}
+	},
+
+    customValidatorValueChanged: Ember.observer('equalTo', 'greaterTo', 'greaterOrEqualTo',
+    		'lesserTo', 'lesserOrEqualTo', 'dirty', 'validationSelector', function() {
+    	if (this.get('dirty')) {
+    		Ember.$(this.get('validationSelector')).parsley().validate();
+    	}
+    }),
+
+    actions: {
+
+    	validateGreaterTo(value) {
+    		return parseInt(value, 10) > parseInt(this.get('greaterTo'), 10);
+    	},
+
+    	validateGreaterOrEqualTo(value) {
+    		return parseInt(value, 10) >= parseInt(this.get('greaterOrEqualTo'), 10);
+    	},
+
+    	validateLesserTo(value) {
+    		return parseInt(value, 10) < parseInt(this.get('lesserTo'), 10);
+    	},
+
+    	validateLesserOrEqualTo(value) {
+    		return parseInt(value, 10) <= parseInt(this.get('lesserOrEqualTo'), 10);
+    	},
+
+    	validateEqualTo(value) {
+    		return Ember.isEqual(value, this.get('equalTo'));
+    	}
+    }
 });

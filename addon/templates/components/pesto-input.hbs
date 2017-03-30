@@ -9,12 +9,9 @@
 				  key-press="keyPress"
 				  key-down="keyDown"
 				  key-up="keyUp"
-				  autocomplete=autoComplete
+				  autocomplete=autoCompleteComputed
 				  autofocus=autoFocus
 				  disabled=disabled
-				  form=form
-				  formnovalidate=formNoValidate
-				  multiple=multiple
 				  name=name
 				  placeholder=placeholder
 				  readonly=readOnly
@@ -59,8 +56,6 @@
 				  class=(concat "form-control " inputClass)
 				  data-parsley-pattern=pattern
 				  data-parsley-pattern-message=patternMessage
-				  data-parsley-equalto=equalToComputed
-				  data-parsley-equalto-message=equalToMessage
 				  data-parsley-validate-if-empty=validateIfEmptyComputed
 				  data-parsley-trigger=validationTriggerComputed
 				  data-parsley-trigger-after-failure=validationTriggerAfterFailureComputed
@@ -80,12 +75,9 @@
 			  key-press="keyPress"
 			  key-down="keyDown"
 			  key-up="keyUp"
-			  autocomplete=autoComplete
+			  autocomplete=autoCompleteComputed
 			  autofocus=autoFocus
 			  disabled=disabled
-			  form=form
-			  formnovalidate=formNoValidate
-			  multiple=multiple
 			  name=name
 			  placeholder=placeholder
 			  readonly=readOnly
@@ -130,8 +122,6 @@
 			  class=(concat "form-control " inputClass)
 			  data-parsley-pattern=pattern
 			  data-parsley-pattern-message=patternMessage
-			  data-parsley-equalto=equalToComputed
-			  data-parsley-equalto-message=equalToMessage
 			  data-parsley-validate-if-empty=validateIfEmptyComputed
 			  data-parsley-trigger=validationTriggerComputed
 			  data-parsley-trigger-after-failure=validationTriggerAfterFailureComputed
@@ -148,3 +138,33 @@
 {{/if}}
 
 {{yield (hash validator=(component "pesto-validator" validationSelector=validationSelector))}}
+
+{{#if equalTo}}
+	{{mx-validator action=(action "validateEqualTo")
+						message=equalToMessage
+						validationSelector=validationSelector}}
+{{/if}}
+
+{{#if greaterTo}}
+	{{mx-validator action=(action "validateGreaterTo")
+						message=greaterToMessage
+						validationSelector=validationSelector}}
+{{/if}}
+
+{{#if greaterOrEqualTo}}
+	{{mx-validator action=(action "validateGreaterOrEqualTo")
+						message=greaterOrEqualToMessage
+						validationSelector=validationSelector}}
+{{/if}}
+
+{{#if lesserTo}}
+	{{mx-validator action=(action "validateLesserTo")
+						message=lesserToMessage
+						validationSelector=validationSelector}}
+{{/if}}
+
+{{#if lesserOrEqualTo}}
+	{{mx-validator action=(action "validateLesserOrEqualTo")
+						message=lesserOrEqualToMessage
+						validationSelector=validationSelector}}
+{{/if}}

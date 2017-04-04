@@ -3,16 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="eaa2ca65-9604-40de-a492-d5b049fc839f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addon/components/pesto-input.js" afterPath="$PROJECT_DIR$/addon/components/pesto-input.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addon/components/pesto-select.js" afterPath="$PROJECT_DIR$/addon/components/pesto-select.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addon/initializers/pesto-parsley-config-mixin.js" afterPath="$PROJECT_DIR$/addon/initializers/pesto-parsley-config-mixin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addon/mixins/pesto-input-mixin.js" afterPath="$PROJECT_DIR$/addon/mixins/pesto-input-mixin.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addon/mixins/pesto-parsley-mixin.js" afterPath="$PROJECT_DIR$/addon/mixins/pesto-parsley-mixin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addon/templates/components/pesto-checkbox-group.hbs" afterPath="$PROJECT_DIR$/addon/templates/components/pesto-checkbox-group.hbs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addon/templates/components/pesto-input.hbs" afterPath="$PROJECT_DIR$/addon/templates/components/pesto-input.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addon/templates/components/pesto-radio-button-group.hbs" afterPath="$PROJECT_DIR$/addon/templates/components/pesto-radio-button-group.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addon/templates/components/pesto-select.hbs" afterPath="$PROJECT_DIR$/addon/templates/components/pesto-select.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addon/templates/components/pesto-textarea.hbs" afterPath="$PROJECT_DIR$/addon/templates/components/pesto-textarea.hbs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/dummy/app/styles/app.css" afterPath="$PROJECT_DIR$/tests/dummy/app/styles/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/dummy/app/templates/application.hbs" afterPath="$PROJECT_DIR$/tests/dummy/app/templates/application.hbs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/dummy/app/templates/components/pesto-code-sample.hbs" afterPath="$PROJECT_DIR$/tests/dummy/app/templates/components/pesto-code-sample.hbs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/dummy/app/templates/pesto-input.hbs" afterPath="$PROJECT_DIR$/tests/dummy/app/templates/pesto-input.hbs" />
     </list>
@@ -32,39 +27,41 @@
       <file leaf-file-name="pesto-input.hbs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/dummy/app/templates/pesto-input.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+            <state relative-caret-position="799">
+              <caret line="170" column="22" lean-forward="false" selection-start-line="170" selection-start-column="22" selection-end-line="170" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pesto-parsley-mixin.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pesto-parsley-mixin.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/addon/mixins/pesto-parsley-mixin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="440" column="13" lean-forward="false" selection-start-line="440" selection-start-column="13" selection-end-line="440" selection-end-column="13" />
+            <state relative-caret-position="688">
+              <caret line="243" column="0" lean-forward="true" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pesto-code-sample.hbs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/dummy/app/templates/components/pesto-code-sample.hbs">
+      <file leaf-file-name="pesto-parsley-config-mixin.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addon/initializers/pesto-parsley-config-mixin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="360">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.hbs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/dummy/app/templates/application.hbs">
+      <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/dummy/app/styles/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="340">
+              <caret line="17" column="22" lean-forward="false" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#552#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,8 +69,28 @@
       <file leaf-file-name="pesto-input.hbs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/addon/templates/components/pesto-input.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="52" column="38" lean-forward="false" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="38" />
+            <state relative-caret-position="420">
+              <caret line="115" column="26" lean-forward="false" selection-start-line="115" selection-start-column="11" selection-end-line="115" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pesto-input.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addon/components/pesto-input.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pesto-input-mixin.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addon/mixins/pesto-input-mixin.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="18" column="7" lean-forward="false" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -93,7 +110,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/addon/mixins/pesto-items-sorting-mixin.js" />
-        <option value="$PROJECT_DIR$/addon/mixins/pesto-input-mixin.js" />
         <option value="$PROJECT_DIR$/bower.json" />
         <option value="$PROJECT_DIR$/addon/templates/components/pesto-button.hbs" />
         <option value="$PROJECT_DIR$/addon/templates/components/pesto-checkbox.hbs" />
@@ -106,7 +122,6 @@
         <option value="$PROJECT_DIR$/addon/templates/components/pesto-radio-button-inline.hbs" />
         <option value="$PROJECT_DIR$/addon/components/pesto-option.js" />
         <option value="$PROJECT_DIR$/addon/templates/components/pesto-option.hbs" />
-        <option value="$PROJECT_DIR$/addon/initializers/pesto-parsley-config-mixin.js" />
         <option value="$PROJECT_DIR$/addon/components/pesto-label.js" />
         <option value="$PROJECT_DIR$/addon/templates/components/pesto-label.hbs" />
         <option value="$PROJECT_DIR$/package.json" />
@@ -119,18 +134,21 @@
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/ember-cli-build.js" />
         <option value="$PROJECT_DIR$/addon/initializers/pesto-data-attributes.js" />
-        <option value="$PROJECT_DIR$/tests/dummy/app/styles/app.css" />
         <option value="$PROJECT_DIR$/addon/templates/components/pesto-radio-button-group.hbs" />
         <option value="$PROJECT_DIR$/addon/templates/components/pesto-checkbox-group.hbs" />
         <option value="$PROJECT_DIR$/addon/templates/components/pesto-select.hbs" />
         <option value="$PROJECT_DIR$/addon/templates/components/pesto-textarea.hbs" />
         <option value="$PROJECT_DIR$/addon/components/pesto-select.js" />
+        <option value="$PROJECT_DIR$/tests/dummy/app/templates/application.hbs" />
+        <option value="$PROJECT_DIR$/tests/dummy/app/templates/components/pesto-code-sample.hbs" />
+        <option value="$PROJECT_DIR$/tests/dummy/app/templates/components/pesto-option-description.hbs" />
+        <option value="$PROJECT_DIR$/tests/dummy/app/styles/app.css" />
+        <option value="$PROJECT_DIR$/tests/dummy/app/templates/pesto-input.hbs" />
         <option value="$PROJECT_DIR$/addon/components/pesto-input.js" />
         <option value="$PROJECT_DIR$/addon/templates/components/pesto-input.hbs" />
-        <option value="$PROJECT_DIR$/tests/dummy/app/templates/application.hbs" />
+        <option value="$PROJECT_DIR$/addon/mixins/pesto-input-mixin.js" />
+        <option value="$PROJECT_DIR$/addon/initializers/pesto-parsley-config-mixin.js" />
         <option value="$PROJECT_DIR$/addon/mixins/pesto-parsley-mixin.js" />
-        <option value="$PROJECT_DIR$/tests/dummy/app/templates/components/pesto-code-sample.hbs" />
-        <option value="$PROJECT_DIR$/tests/dummy/app/templates/pesto-input.hbs" />
       </list>
     </option>
   </component>
@@ -264,89 +282,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ember-pesto" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ember-pesto" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dummy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ember-pesto" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ember-pesto" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dummy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="styles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ember-pesto" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ember-pesto" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dummy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -425,8 +361,8 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -718,14 +654,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/dummy/app/templates/pesto-input.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -780,13 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addon/mixins/pesto-input-mixin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1600">
-          <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -972,36 +893,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addon/initializers/pesto-parsley-config-mixin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/dummy/app/styles/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="30" column="21" lean-forward="false" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#489#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addon/initializers/pesto-data-attributes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/addon/templates/components/pesto-radio-button-group.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1980">
           <caret line="99" column="7" lean-forward="false" selection-start-line="99" selection-start-column="7" selection-end-line="99" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1009,7 +904,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="640">
           <caret line="32" column="7" lean-forward="false" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1017,7 +911,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="819">
           <caret line="111" column="7" lean-forward="false" selection-start-line="111" selection-start-column="7" selection-end-line="111" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1025,7 +918,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="43" column="17" lean-forward="false" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1033,7 +925,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1041,7 +932,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1053,42 +943,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addon/components/pesto-input.js">
+    <entry file="file://$PROJECT_DIR$/tests/dummy/app/templates/components/pesto-code-sample.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="30" column="3" lean-forward="false" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
+        <state relative-caret-position="440">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addon/mixins/pesto-parsley-mixin.js">
+    <entry file="file://$PROJECT_DIR$/tests/dummy/app/templates/components/pesto-option-description.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="440" column="13" lean-forward="false" selection-start-line="440" selection-start-column="13" selection-end-line="440" selection-end-column="13" />
+        <state relative-caret-position="160">
+          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addon/initializers/pesto-data-attributes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addon/components/pesto-input.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/dummy/app/styles/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" column="22" lean-forward="false" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#552#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addon/initializers/pesto-parsley-config-mixin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addon/mixins/pesto-input-mixin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="7" lean-forward="false" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/addon/templates/components/pesto-input.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="52" column="38" lean-forward="false" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="38" />
+        <state relative-caret-position="420">
+          <caret line="115" column="26" lean-forward="false" selection-start-line="115" selection-start-column="11" selection-end-line="115" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/dummy/app/templates/pesto-input.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+        <state relative-caret-position="799">
+          <caret line="170" column="22" lean-forward="false" selection-start-line="170" selection-start-column="22" selection-end-line="170" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/dummy/app/templates/components/pesto-code-sample.hbs">
+    <entry file="file://$PROJECT_DIR$/addon/mixins/pesto-parsley-mixin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="688">
+          <caret line="243" column="0" lean-forward="true" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -4,65 +4,186 @@
 
 <h2>Available options</h2>
 
-{{#pesto-code-sample
+{{pesto-option-description
 		  optionName="autoComplete"
 		  type="Boolean"
 		  defaultValue="true"
-		  description="Turn on or off auto completion on the input"
-		  snippetName="pesto-input-autocomplete"}}
+		  description="Turn on or off auto completion on the input"}}
+
+{{#pesto-code-sample snippetName="pesto-input-autocomplete"}}
 
 {{!-- BEGIN-SNIPPET pesto-input-autocomplete --}}
-
 	{{pesto-input autoComplete=true}}
-
 {{!-- END-SNIPPET --}}
 
 {{/pesto-code-sample}}
 
-{{#pesto-code-sample
+{{pesto-option-description
 		  optionName="autoFocus"
 		  type="Boolean"
 		  defaultValue="false"
-		  description="Automatically focus on input"
-		  snippetName="pesto-input-autofocus"}}
+		  description="Automatically focus on input"}}
+
+{{#pesto-code-sample snippetName="pesto-input-autofocus"}}
 
 {{!-- BEGIN-SNIPPET pesto-input-autofocus --}}
-
 	{{pesto-input autoFocus=true}}
-
 {{!-- END-SNIPPET --}}
 
 {{/pesto-code-sample}}
 
-{{#pesto-code-sample
+{{pesto-option-description
 		  optionName="disabled"
 		  type="Boolean"
 		  defaultValue="false"
-		  description="Disable the input"
-		  snippetName="pesto-input-disabled"}}
+		  description="Disable the input"}}
+
+{{#pesto-code-sample snippetName="pesto-input-disabled"}}
 
 {{!-- BEGIN-SNIPPET pesto-input-disabled --}}
-
 	{{pesto-input disabled=true}}
-
 {{!-- END-SNIPPET --}}
 
 {{/pesto-code-sample}}
 
-{{#pesto-code-sample
+{{pesto-option-description
 		  optionName="label"
 		  type="String"
-		  description="The label"
-		  snippetName="pesto-input-label"}}
+		  description="The input label"}}
+
+{{#pesto-code-sample snippetName="pesto-input-label"}}
 
 {{!-- BEGIN-SNIPPET pesto-input-label --}}
-
 	{{pesto-input label="My input"}}
-
 {{!-- END-SNIPPET --}}
 
 {{/pesto-code-sample}}
 
 
+{{pesto-option-description
+		  optionName="labelClass"
+		  type="String"
+		  description="The label class"}}
+
+{{#pesto-code-sample snippetName="pesto-input-label-class"}}
+
+{{!-- BEGIN-SNIPPET pesto-input-label-class --}}
+	{{pesto-input labelClass="my-label-class"}}
+{{!-- END-SNIPPET --}}
+
+{{/pesto-code-sample}}
+
+{{#pesto-option-description
+		  optionName="labelVisible"
+		  type="Boolean"
+		  defaultValue="true"}}
+
+	<p>Controls if the label is visible on the screen, if set to <code>false</code> the label
+		will only be visible by a screen reader</p>
+
+{{/pesto-option-description}}
+
+{{#pesto-code-sample snippetName="pesto-input-label-visible"}}
+
+{{!-- BEGIN-SNIPPET pesto-input-label-visible --}}
+	{{pesto-input label="My label" labelVisible=false}}
+{{!-- END-SNIPPET --}}
+
+{{/pesto-code-sample}}
+
+{{pesto-option-description
+		  optionName="name"
+		  type="String"
+		  description="The input name"}}
+
+{{#pesto-code-sample snippetName="pesto-input-name"}}
+
+{{!-- BEGIN-SNIPPET pesto-input-name --}}
+	{{pesto-input name="some input name"}}
+{{!-- END-SNIPPET --}}
+
+{{/pesto-code-sample}}
+
+{{pesto-option-description
+		  optionName="placeholder"
+		  type="String"
+		  description="The input placeholder"}}
+
+{{#pesto-code-sample snippetName="pesto-input-placeholder"}}
+
+{{!-- BEGIN-SNIPPET pesto-input-placeholder --}}
+	{{pesto-input placeholder="Enter something"}}
+{{!-- END-SNIPPET --}}
+
+{{/pesto-code-sample}}
+
+{{pesto-option-description
+		  optionName="inputWidthClass"
+		  type="String"
+		  description="The column class that controls the size of input."}}
+
+{{#pesto-code-sample snippetName="pesto-input-width-class"}}
+
+{{!-- BEGIN-SNIPPET pesto-input-width-class --}}
+	{{pesto-input inputWidthClass="col-sm-2"}}
+{{!-- END-SNIPPET --}}
+
+{{/pesto-code-sample}}
 
 
+{{pesto-option-description
+		  optionName="readOnly"
+		  type="Boolean"
+		  defaultValue="false"
+		  description="Controls if the input is read only"}}
+
+{{#pesto-code-sample snippetName="pesto-input-read-only"}}
+
+{{!-- BEGIN-SNIPPET pesto-input-read-only--}}
+	{{pesto-input readOnly=true value="Read only input"}}
+{{!-- END-SNIPPET --}}
+
+{{/pesto-code-sample}}
+
+{{pesto-option-description
+		  optionName="tabIndex"
+		  type="String"
+		  description="The tabindex attribute specifies the tab order of an element"}}
+
+{{#pesto-code-sample snippetName="pesto-input-tab-index"}}
+
+{{!-- BEGIN-SNIPPET pesto-input-tab-index--}}
+	{{pesto-input}}
+{{!-- END-SNIPPET --}}
+
+{{/pesto-code-sample}}
+
+{{pesto-option-description
+		  optionName="required"
+		  type="Boolean"
+		  defaultValue="false"
+		  description="Controls if the field is required"}}
+
+{{#pesto-code-sample snippetName="pesto-input-required"}}
+
+{{!-- BEGIN-SNIPPET pesto-input-required--}}
+	{{pesto-input required=true iconClass="fa fa-search"}}
+{{!-- END-SNIPPET --}}
+
+{{/pesto-code-sample}}
+
+{{pesto-option-description
+		  optionName="requiredMessage"
+		  type="String"
+		  description="Error message when field is required"}}
+
+{{#pesto-code-sample snippetName="pesto-input-required"}}
+
+{{!-- BEGIN-SNIPPET pesto-input-required--}}
+	{{pesto-input required=true requiredMessage="This field is required"}}
+{{!-- END-SNIPPET --}}
+
+{{/pesto-code-sample}}
+
+
+<br/>

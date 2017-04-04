@@ -1,10 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.Mixin.create({
+
 	/**
 	 * Classes that will be passed to the component.
 	 */
 	classNames: ['form-group'],
+
+	classNameBindings: ['hasIconClass:has-feedback'],
+
+    hasIconClass: Ember.computed.notEmpty('iconClass'),
 
 	/**
 	 * The label is visible by default.
@@ -18,6 +23,14 @@ export default Ember.Mixin.create({
 	inputId: Ember.computed('elementId', function() {
 		return `${this.get('elementId')}-input`;
 	}),
+
+	/**
+    * Returns the input id.
+    * @returns {string}
+    */
+    inputFeedbackId: Ember.computed('elementId', function() {
+    	return `${this.get('elementId')}-feedback`;
+    }),
 
 	/**
 	 * Set the validation to trigger on the blur event on the first time.

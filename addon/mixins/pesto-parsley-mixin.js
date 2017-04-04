@@ -23,7 +23,6 @@ export default Ember.Mixin.create({
 		}
 	}),
 
-
 	validateIfEmptyComputed: Ember.computed('validateIfEmpty', function() {
 		if (this.get('validateIfEmpty')) {
 			return this.get('validateIfEmpty');
@@ -240,6 +239,9 @@ export default Ember.Mixin.create({
 					this.triggerValidationSuccessAction();
 				});
 				Ember.$(validationSelector).parsley().on('field:error', () => {
+
+					Ember.$('#'+ this.get('inputFeedbackId')).addClass('fa fa-remove');
+
 					this.triggerValidationStateChangeAction(false);
 					this.triggerValidationErrorAction();
 				});
@@ -443,7 +445,7 @@ export default Ember.Mixin.create({
 	},
 
     customValidatorValueChanged: Ember.observer('equalTo', 'greaterTo', 'greaterOrEqualTo',
-    		'lesserTo', 'lesserOrEqualTo', 'dirty', 'validationSelector', function() {
+    		'lesserTo', 'lesserOrEqualTo', function() {
     	if (this.get('dirty')) {
     		Ember.$(this.get('validationSelector')).parsley().validate();
     	}

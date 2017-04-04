@@ -1,0 +1,17 @@
+{{#if hasBlock}}
+	<h3>{{optionName}}</h3>
+	{{yield}}
+	{{#if defaultValue}}
+		<p>Type: <code>{{type}}</code> Default: <code>{{defaultValue}}</code></p>
+	{{else}}
+		<p>Type: <code>{{type}}</code></p>
+	{{/if}}
+{{else}}
+	<h3>{{optionName}}</h3>
+	<p>{{description}}</p>
+	{{#if defaultValue}}
+		<p>Type: <code>{{type}}</code> Default: <code>{{defaultValue}}</code></p>
+	{{else}}
+		<p>Type: <code>{{type}}</code></p>
+	{{/if}}
+{{/if}}

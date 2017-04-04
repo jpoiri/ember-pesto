@@ -1,13 +1,3 @@
-<h3>{{optionName}}</h3>
-
-<p>{{description}}</p>
-
-{{#if defaultValue}}
-	<p>Type: <code>{{type}}</code> Default Value: <code>{{defaultValue}}</code></p>
-{{else}}
-	<p>Type: <code>{{type}}</code></p>
-{{/if}}
-
 <ul class="nav nav-pills">
 	<li role="presentation" class="active">
 		<a href={{concat "#" elementId "-run"}} aria-controls={{concat elementId "-run"}} role="tab" data-toggle="tab">

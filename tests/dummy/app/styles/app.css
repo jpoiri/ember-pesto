@@ -30,3 +30,7 @@ font-size: 1.7rem;
 .control-label {
 	font-weight: 400;
 }
+
+.has-feedback label~.form-control-feedback {
+    top: 30px;
+}

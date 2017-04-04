@@ -15,26 +15,12 @@
 				  name=name
 				  placeholder=placeholder
 				  readonly=readOnly
-				  size=size
-				  step=step
-				  accesskey=accessKey
-				  contenteditable=contentEditable
-				  contextmenu=contextMenu
-				  dir=dir
-				  draggable=draggable
-				  dropzone=dropZone
-				  hidden=hidden
-				  lang=lang
-				  spellcheck=spellCheck
 				  required=required
 				  tabindex=tabIndex
-				  title=title
-				  translate=translate
-				  data-test-automation-id=testAutomationId
 				  data-parsley-required=required
 				  data-parsley-type=validationType
 				  type=htmlType
-				  data-parsley-required-message=requiredMessageComputed
+				  data-parsley-required-message=requiredMessage
 				  data-parsley-type-message=typeMessage
 				  data-parsley-minlength=minimumLength
 				  minlength=minimumLength
@@ -63,7 +49,9 @@
 				  data-parsley-class-handler=validationClassHandlerComputed
 				  data-parsley-validation-threshold=validationThreshold
 				  data-parsley-errors-container=errorMessagesContainerComputed
+				  data-parsley-error-class=errorClass
 				  data-parsley-error-message=errorMessage
+				  data-parsley-error-template=errorTemplate
 		}}
 
 	</div>
@@ -81,26 +69,12 @@
 			  name=name
 			  placeholder=placeholder
 			  readonly=readOnly
-			  size=size
-			  step=step
-			  accesskey=accessKey
-			  contenteditable=contentEditable
-			  contextmenu=contextMenu
-			  dir=dir
-			  draggable=draggable
-			  dropzone=dropZone
-			  hidden=hidden
-			  lang=lang
-			  spellcheck=spellCheck
 			  required=required
 			  tabindex=tabIndex
-			  title=title
-			  translate=translate
-			  data-test-automation-id=testAutomationId
 			  data-parsley-required=required
 			  data-parsley-type=validationType
 			  type=htmlType
-			  data-parsley-required-message=requiredMessageComputed
+			  data-parsley-required-message=requiredMessage
 			  data-parsley-type-message=typeMessage
 			  data-parsley-minlength=minimumLength
 			  minlength=minimumLength
@@ -129,13 +103,17 @@
 			  data-parsley-class-handler=validationClassHandlerComputed
 			  data-parsley-validation-threshold=validationThreshold
 			  data-parsley-errors-container=errorMessagesContainerComputed
+			  data-parsley-error-class=errorClass
 			  data-parsley-error-message=errorMessage
+			  data-parsley-error-template=errorTemplate
 	}}
 {{/if}}
 
 {{#if helpText}}
 	<span id="helpBlock" class="help-block">{{helpText}}</span>
 {{/if}}
+
+<span id={{inputFeedbackId}} class="form-control-feedback {{iconClass}}"></span>
 
 {{yield (hash validator=(component "pesto-validator" validationSelector=validationSelector))}}
 

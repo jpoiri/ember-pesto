@@ -35,11 +35,11 @@ export default Ember.Mixin.create({
 	}),
 
 	hasError: Ember.computed('dirty', 'valid', function() {
-		return (this.get('dirty') && !this.get('valid') && this.get('showValidationErrorState'));
+		return (this.get('dirty') && !this.get('valid') && this.get('showValidationError'));
 	}),
 
 	hasSuccess: Ember.computed('dirty', 'valid', function() {
-    	return (this.get('dirty') && this.get('valid') && this.get('showValidationSuccessState'));
+    	return (this.get('dirty') && this.get('valid') && this.get('showValidationSuccess'));
     }),
 
 	formControlFeedbackClass: Ember.computed('iconClass', 'dirty', 'valid',

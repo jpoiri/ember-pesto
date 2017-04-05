@@ -7,6 +7,59 @@ export default Ember.Mixin.create({
 
 	validate: true,
 
+	dirty: false,
+
+	valid: true,
+
+	validationSuccessIconClass: 'fa fa-check',
+
+	validationErrorIconClass: 'fa fa-remove',
+
+	showValidationError: true,
+
+	showValidationSuccess: false,
+
+	showValidationSuccessIcon: true,
+
+	showValidationErrorIcon: true,
+
+	classNameBindings: ['hasFeedback:has-feedback', 'hasError:has-error', 'hasSuccess:has-success'],
+
+	hasFeedback: Ember.computed('iconClass', 'dirty', function() {
+		if (this.get('dirty')) {
+			return true;
+		} else if (!Ember.isNone(this.get('iconClass'))) {
+			return true;
+		}
+		return false;
+	}),
+
+	hasError: Ember.computed('dirty', 'valid', function() {
+		return (this.get('dirty') && !this.get('valid') && this.get('showValidationErrorState'));
+	}),
+
+	hasSuccess: Ember.computed('dirty', 'valid', function() {
+    	return (this.get('dirty') && this.get('valid') && this.get('showValidationSuccessState'));
+    }),
+
+	formControlFeedbackClass: Ember.computed('iconClass', 'dirty', 'valid',
+		'validationSuccessIconClass', 'validationErrorIconClass',
+		'showValidationSuccessIcon', 'showValidationErrorIcon', function() {
+		if (this.get('dirty')) {
+			if (this.get('valid') && this.get('showValidationSuccessIcon')) {
+				return this.get('validationSuccessIconClass');
+			} else if (!this.get('valid') && this.get('showValidationErrorIcon')) {
+				return this.get('validationErrorIconClass');
+			} else if (!Ember.isNone(this.get('iconClass'))) {
+				return this.get('iconClass');
+			}
+			return null;
+		} else if (!Ember.isNone(this.get('iconClass'))) {
+			return this.get('iconClass');
+		}
+		return null;
+	}),
+
 	/**
 	 * Returns the html type attribute based on the component type property.
 	 * @returns {string}
@@ -171,17 +224,6 @@ export default Ember.Mixin.create({
 	}),
 
 	/**
-	 * Returns the value for the data-parsley-equalto attribute.
-	 * @returns {string}
-	 */
-	equalToComputed: Ember.computed('equalTo', function() {
-		if (!Ember.isNone(this.get('equalTo'))) {
-			return `#${this.get('equalTo')}`;
-		}
-		return null;
-	}),
-
-	/**
 	 * Returns the value for the data-parsley-errors-container attribute.
 	 * @returns {string}
 	 */
@@ -217,13 +259,16 @@ export default Ember.Mixin.create({
 					this.triggerBeforeValidationAction();
 				});
 				Ember.$(validationSelector).parsley().on('form:validated', () => {
+					this.set('dirty', true);
 					this.triggerAfterValidationAction();
 				});
 				Ember.$(validationSelector).parsley().on('form:success', () => {
+					this.set('valid', true);
 					this.triggerValidationStateChangeAction(true);
 					this.triggerValidationSuccessAction();
 				});
 				Ember.$(validationSelector).parsley().on('form:error', () => {
+					this.set('valid', false);
 					this.triggerValidationStateChangeAction(false);
 					this.triggerValidationErrorAction();
 				});
@@ -232,16 +277,16 @@ export default Ember.Mixin.create({
 					this.triggerBeforeValidationAction();
 				});
 				Ember.$(validationSelector).parsley().on('field:validated', () => {
+					this.set('dirty', true);
 					this.triggerAfterValidationAction();
 				});
 				Ember.$(validationSelector).parsley().on('field:success', () => {
+					this.set('valid', true);
 					this.triggerValidationStateChangeAction(true);
 					this.triggerValidationSuccessAction();
 				});
 				Ember.$(validationSelector).parsley().on('field:error', () => {
-
-					Ember.$('#'+ this.get('inputFeedbackId')).addClass('fa fa-remove');
-
+					this.set('valid', false);
 					this.triggerValidationStateChangeAction(false);
 					this.triggerValidationErrorAction();
 				});

@@ -1,10 +1,10 @@
 export function initialize() {
 
 	// Set parsley global configuration.
-	window.Parsley.options.errorClass = 'has-error has-feedback';
-	window.Parsley.options.classHandler = function(el) {
-		return el.$element.closest('.form-group');
-	};
+	//window.Parsley.options.errorClass = 'has-error has-feedback';
+	//window.Parsley.options.classHandler = function(el) {
+		//return el.$element.closest('.form-group');
+	//};
 	/**
 	 * This is the Parsley function that returns the DOM element that will be the anchor to attach `window.Parsley.options.errorsWrapper`
 	 * @param  {Parsley} el The element that triggers the error

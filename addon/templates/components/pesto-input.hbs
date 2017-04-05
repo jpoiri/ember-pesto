@@ -113,7 +113,7 @@
 	<span id="helpBlock" class="help-block">{{helpText}}</span>
 {{/if}}
 
-<span id={{inputFeedbackId}} class="form-control-feedback {{iconClass}}"></span>
+<span class="form-control-feedback {{formControlFeedbackClass}}"></span>
 
 {{yield (hash validator=(component "pesto-validator" validationSelector=validationSelector))}}
 

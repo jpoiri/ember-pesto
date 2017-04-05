@@ -7,10 +7,6 @@ export default Ember.Mixin.create({
 	 */
 	classNames: ['form-group'],
 
-	classNameBindings: ['hasIconClass:has-feedback'],
-
-    hasIconClass: Ember.computed.notEmpty('iconClass'),
-
 	/**
 	 * The label is visible by default.
 	 */

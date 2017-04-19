@@ -11,55 +11,6 @@ export default Ember.Mixin.create({
 
 	valid: true,
 
-	validationSuccessIconClass: 'fa fa-check',
-
-	validationErrorIconClass: 'fa fa-remove',
-
-	showValidationError: true,
-
-	showValidationSuccess: false,
-
-	showValidationSuccessIcon: true,
-
-	showValidationErrorIcon: true,
-
-	classNameBindings: ['hasFeedback:has-feedback', 'hasError:has-error', 'hasSuccess:has-success'],
-
-	hasFeedback: Ember.computed('iconClass', 'dirty', function() {
-		if (this.get('dirty')) {
-			return true;
-		} else if (!Ember.isNone(this.get('iconClass'))) {
-			return true;
-		}
-		return false;
-	}),
-
-	hasError: Ember.computed('dirty', 'valid', function() {
-		return (this.get('dirty') && !this.get('valid') && this.get('showValidationError'));
-	}),
-
-	hasSuccess: Ember.computed('dirty', 'valid', function() {
-    	return (this.get('dirty') && this.get('valid') && this.get('showValidationSuccess'));
-    }),
-
-	formControlFeedbackClass: Ember.computed('iconClass', 'dirty', 'valid',
-		'validationSuccessIconClass', 'validationErrorIconClass',
-		'showValidationSuccessIcon', 'showValidationErrorIcon', function() {
-		if (this.get('dirty')) {
-			if (this.get('valid') && this.get('showValidationSuccessIcon')) {
-				return this.get('validationSuccessIconClass');
-			} else if (!this.get('valid') && this.get('showValidationErrorIcon')) {
-				return this.get('validationErrorIconClass');
-			} else if (!Ember.isNone(this.get('iconClass'))) {
-				return this.get('iconClass');
-			}
-			return null;
-		} else if (!Ember.isNone(this.get('iconClass'))) {
-			return this.get('iconClass');
-		}
-		return null;
-	}),
-
 	/**
 	 * Returns the html type attribute based on the component type property.
 	 * @returns {string}

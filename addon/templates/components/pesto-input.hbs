@@ -109,11 +109,11 @@
 	}}
 {{/if}}
 
-{{#if helpText}}
-	<span id="helpBlock" class="help-block">{{helpText}}</span>
-{{/if}}
+<span class="form-control-feedback {{iconClassComputed}}"></span>
 
-<span class="form-control-feedback {{formControlFeedbackClass}}"></span>
+{{#if showSuccessMessage}}
+	<div class="help-block">{{successMessage}}</div>
+{{/if}}
 
 {{yield (hash validator=(component "pesto-validator" validationSelector=validationSelector))}}
 

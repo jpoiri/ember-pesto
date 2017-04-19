@@ -15,6 +15,7 @@ Router.map(function() {
   this.route('pesto-radio-button-group');
   this.route('pesto-button');
   this.route('pesto-form');
+  this.route('sandbox');
 });
 
 export default Router;

@@ -9,7 +9,6 @@
 				  key-press="keyPress"
 				  key-down="keyDown"
 				  key-up="keyUp"
-				  autocomplete=autoCompleteComputed
 				  autofocus=autoFocus
 				  disabled=disabled
 				  name=name
@@ -46,12 +45,8 @@
 				  data-parsley-trigger=validationTriggerComputed
 				  data-parsley-trigger-after-failure=validationTriggerAfterFailureComputed
 				  data-parsley-group=validationGroup
-				  data-parsley-class-handler=validationClassHandlerComputed
 				  data-parsley-validation-threshold=validationThreshold
-				  data-parsley-errors-container=errorMessagesContainerComputed
-				  data-parsley-error-class=errorClass
 				  data-parsley-error-message=errorMessage
-				  data-parsley-error-template=errorTemplate
 		}}
 
 	</div>
@@ -63,7 +58,6 @@
 			  key-press="keyPress"
 			  key-down="keyDown"
 			  key-up="keyUp"
-			  autocomplete=autoCompleteComputed
 			  autofocus=autoFocus
 			  disabled=disabled
 			  name=name
@@ -100,19 +94,25 @@
 			  data-parsley-trigger=validationTriggerComputed
 			  data-parsley-trigger-after-failure=validationTriggerAfterFailureComputed
 			  data-parsley-group=validationGroup
-			  data-parsley-class-handler=validationClassHandlerComputed
 			  data-parsley-validation-threshold=validationThreshold
-			  data-parsley-errors-container=errorMessagesContainerComputed
 			  data-parsley-error-class=errorClass
 			  data-parsley-error-message=errorMessage
-			  data-parsley-error-template=errorTemplate
+			  data-parsley-errors-messages-disabled=true
 	}}
 {{/if}}
 
-<span class="form-control-feedback {{iconClassComputed}}"></span>
+<span class="form-control-feedback {{formControlFeedbackClass}}"></span>
 
 {{#if showSuccessMessage}}
 	<div class="help-block">{{successMessage}}</div>
+{{/if}}
+
+{{#if showHelpMessage}}
+	<div class="help-block">{{helpMessage}}</div>
+{{/if}}
+
+{{#if showErrorMessage}}
+	<div class="help-block">{{parsleyErrorMessage}}</div>
 {{/if}}
 
 {{yield (hash validator=(component "pesto-validator" validationSelector=validationSelector))}}

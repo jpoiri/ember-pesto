@@ -175,28 +175,6 @@ export default Ember.Mixin.create({
 	}),
 
 	/**
-	 * Returns the value for the data-parsley-errors-container attribute.
-	 * @returns {string}
-	 */
-	errorMessagesContainerComputed: Ember.computed('errorMessagesContainer', function() {
-		if (!Ember.isNone(this.get('errorMessagesContainer'))) {
-			return `#${this.get('errorMessagesContainer')}`;
-		}
-		return null;
-	}),
-
-	/**
-	 * Returns the value for the data-parsley-class-handler attribute.
-	 * @returns {string}
-	 */
-	validationClassHandlerComputed: Ember.computed('validationClassHandler', function() {
-		if (!Ember.isNone(this.get('validationClassHandler'))) {
-			return `#${this.get('validationClassHandler')}`;
-		}
-		return null;
-	}),
-
-	/**
 	 * This event handler is responsible to inject custom validators in the component.
 	 */
 	didInsertElement() {
@@ -236,7 +214,8 @@ export default Ember.Mixin.create({
 					this.triggerValidationStateChangeAction(true);
 					this.triggerValidationSuccessAction();
 				});
-				Ember.$(validationSelector).parsley().on('field:error', () => {
+				Ember.$(validationSelector).parsley().on('field:error', (fieldInstance) => {
+					this.set('parsleyErrorMessage', fieldInstance.getErrorsMessages()[0]);
 					this.set('valid', false);
 					this.triggerValidationStateChangeAction(false);
 					this.triggerValidationErrorAction();

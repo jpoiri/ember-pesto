@@ -21,14 +21,6 @@ export default Ember.Mixin.create({
 	}),
 
 	/**
-    * Returns the input id.
-    * @returns {string}
-    */
-    inputFeedbackId: Ember.computed('elementId', function() {
-    	return `${this.get('elementId')}-feedback`;
-    }),
-
-	/**
 	 * Set the validation to trigger on the blur event on the first time.
 	 */
 	validationTrigger: 'focusOut',

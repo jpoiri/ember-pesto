@@ -8,11 +8,6 @@ export default Ember.Mixin.create({
 	classNames: ['form-group'],
 
 	/**
-	 * The label is visible by default.
-	 */
-	labelVisible: true,
-
-	/**
 	 * Returns the input id.
 	 * @returns {string}
 	 */

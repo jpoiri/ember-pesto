@@ -1,5 +1,7 @@
 import Ember from 'ember';
 
+const { computed } = Ember;
+
 export default Ember.Mixin.create({
 
 	classNameBindings: [
@@ -8,16 +10,24 @@ export default Ember.Mixin.create({
     	'hasSuccessClass:has-success'
     ],
 
+    showErrorState: true,
+
+    showSuccessState: false,
+
+    showLabel: true,
+
+    showValidationMessage: true,
+
     hasFeedbackClass: computed('hasIcon', 'dirty', function() {
     	return (this.get('hasIcon') || this.get('dirty'));
     }),
 
-    hasErrorClass: computed('dirty', 'valid', function() {
-    	return (this.get('dirty') && !this.get('valid'));
+    hasErrorClass: computed('dirty', 'valid', 'showErrorState', function() {
+    	return (this.get('dirty') && !this.get('valid') && this.get('showErrorState'));
     }),
 
-    hasSuccessClass: computed('dirty', 'valid', 'showSuccess', function() {
-        return (this.get('dirty') && this.get('valid') && this.get('showSuccess'));
+    hasSuccessClass: computed('dirty', 'valid', 'showSuccessState', function() {
+        return (this.get('dirty') && this.get('valid') && this.get('showSuccessState'));
     }),
 
     hasIcon: computed.notEmpty('iconClass'),
@@ -28,25 +38,32 @@ export default Ember.Mixin.create({
 
     hasSuccessMessage: computed.notEmpty('successMessage'),
 
-    formControlFeedbackClass: computed('dirty', 'valid', 'hasErrorIcon', 'hasSuccessIcon', 'showSuccess', function() {
-    	if (this.get('dirty') && this.get('valid') && this.get('hasSuccessIcon') && this.get('showSuccess')) {
+    formControlFeedbackClass: computed('dirty', 'valid', 'hasErrorIcon',
+    	'hasSuccessIcon', 'showSuccessState', 'showErrorState', function() {
+    	if (this.get('dirty') && this.get('valid') && this.get('hasSuccessIcon') && this.get('showSuccessState')) {
     		return this.get('successIconClass');
-    	} else if (this.get('dirty') && !this.get('valid') && this.get('hasErrorIcon')) {
+    	} else if (this.get('dirty') && !this.get('valid') && this.get('hasErrorIcon') && this.get('showErrorState')) {
     		return this.get('errorIconClass');
     	}
     	return this.get('iconClass');
     }),
 
-    showSuccessMessage: computed('dirty', 'valid', 'hasSuccessMessage', 'showSuccess', function() {
-    	return this.get('dirty') && this.get('valid') && this.get('hasSuccessMessage') && this.get('showSuccess')
+    showSuccessMessage: computed('dirty', 'valid', 'hasSuccessMessage', 'showSuccessState', 'showValidationMessage', function() {
+    	return this.get('dirty')
+    	&& this.get('valid')
+    	&& this.get('hasSuccessMessage')
+    	&& this.get('showSuccessState')
+    	&& this.get('showValidationMessage');
     }),
 
-    showHelpMessage: computed('dirty', 'valid', 'showSuccess', function() {
-        return (!this.get('dirty') || this.get('dirty') && this.get('valid') && !this.get('showSuccess'))
+    showHelpMessage: computed('dirty', 'valid', 'showSuccessState', 'showErrorState', function() {
+        return (!this.get('dirty')
+        || this.get('dirty') && this.get('valid') && !this.get('showSuccessState')
+        || this.get('dirty') && !this.get('valid') && !this.get('showErrorState'));
     }),
 
-    showErrorMessage: computed('dirty', 'valid', function() {
-    	return this.get('dirty') && !this.get('valid');
+    showErrorMessage: computed('dirty', 'valid', 'showErrorState', 'showValidationMessage', function() {
+    	return this.get('dirty') && !this.get('valid') && this.get('showErrorState') && this.get('showValidationMessage');
     })
 
 });

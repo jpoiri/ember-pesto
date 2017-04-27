@@ -215,7 +215,11 @@ export default Ember.Mixin.create({
 					this.triggerValidationSuccessAction();
 				});
 				Ember.$(validationSelector).parsley().on('field:error', (fieldInstance) => {
-					this.set('parsleyErrorMessage', fieldInstance.getErrorsMessages()[0]);
+					const errorMessages = Ember.A()
+					for (var i = 0; i <= fieldInstance.getErrorsMessages().length; i++) {
+						errorMessages.pushObject(fieldInstance.getErrorsMessages()[i]);
+					}
+					this.set('errorMessages', errorMessages);
 					this.set('valid', false);
 					this.triggerValidationStateChangeAction(false);
 					this.triggerValidationErrorAction();

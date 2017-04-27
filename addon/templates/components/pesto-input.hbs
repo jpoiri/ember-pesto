@@ -111,8 +111,14 @@
 	<div class="help-block">{{helpMessage}}</div>
 {{/if}}
 
-{{#if showErrorMessage}}
-	<div class="help-block">{{parsleyErrorMessage}}</div>
+{{#if showErrorMessages}}
+	{{#if showFirstErrorMessageOnly}}
+		<div class="help-block">{{errorMessages.firstObject}}</div>
+	{{else}}
+		{{#each errorMessages as |errorMessage|}}
+			<div class="help-block">{{errorMessage}}</div>
+		{{/each}}
+	{{/if}}
 {{/if}}
 
 {{yield (hash validator=(component "pesto-validator" validationSelector=validationSelector))}}

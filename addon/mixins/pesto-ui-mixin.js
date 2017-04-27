@@ -16,7 +16,9 @@ export default Ember.Mixin.create({
 
     showLabel: true,
 
-    showValidationMessage: true,
+    showMessages: true,
+
+    showFirstErrorMessageOnly: true,
 
     hasFeedbackClass: computed('hasIcon', 'dirty', function() {
     	return (this.get('hasIcon') || this.get('dirty'));
@@ -36,8 +38,6 @@ export default Ember.Mixin.create({
 
     hasErrorIcon: computed.notEmpty('errorIconClass'),
 
-    hasSuccessMessage: computed.notEmpty('successMessage'),
-
     formControlFeedbackClass: computed('dirty', 'valid', 'hasErrorIcon',
     	'hasSuccessIcon', 'showSuccessState', 'showErrorState', function() {
     	if (this.get('dirty') && this.get('valid') && this.get('hasSuccessIcon') && this.get('showSuccessState')) {
@@ -48,22 +48,16 @@ export default Ember.Mixin.create({
     	return this.get('iconClass');
     }),
 
-    showSuccessMessage: computed('dirty', 'valid', 'hasSuccessMessage', 'showSuccessState', 'showValidationMessage', function() {
-    	return this.get('dirty')
-    	&& this.get('valid')
-    	&& this.get('hasSuccessMessage')
-    	&& this.get('showSuccessState')
-    	&& this.get('showValidationMessage');
+    showSuccessMessage: computed('dirty', 'valid', 'showSuccessState', 'showMessages', function() {
+    	return this.get('dirty') && this.get('valid') && this.get('showSuccessState') && this.get('showMessages');
     }),
 
-    showHelpMessage: computed('dirty', 'valid', 'showSuccessState', 'showErrorState', function() {
-        return (!this.get('dirty')
-        || this.get('dirty') && this.get('valid') && !this.get('showSuccessState')
-        || this.get('dirty') && !this.get('valid') && !this.get('showErrorState'));
+    showErrorMessages: computed('dirty', 'valid', 'showErrorState', 'showMessages', function() {
+       	return this.get('dirty') && !this.get('valid') && this.get('showErrorState') && this.get('showMessages');
     }),
 
-    showErrorMessage: computed('dirty', 'valid', 'showErrorState', 'showValidationMessage', function() {
-    	return this.get('dirty') && !this.get('valid') && this.get('showErrorState') && this.get('showValidationMessage');
+    showHelpMessage: computed('dirty', 'valid', 'showErrorState', function() {
+        return (!this.get('dirty') || this.get('dirty') && !this.get('valid') && !this.get('showErrorState'));
     })
 
 });

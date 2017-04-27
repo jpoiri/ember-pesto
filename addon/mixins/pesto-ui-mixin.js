@@ -2,6 +2,9 @@ import Ember from 'ember';
 
 const { computed } = Ember;
 
+/**
+* This mixin is responsible to handle the validation ui.
+*/
 export default Ember.Mixin.create({
 
 	  classNameBindings: [

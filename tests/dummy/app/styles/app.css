@@ -32,5 +32,5 @@ font-size: 1.7rem;
 }
 
 .has-feedback label~.form-control-feedback {
-    top: 30px;
+    top: 31px;
 }

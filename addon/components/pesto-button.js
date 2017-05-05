@@ -1,13 +1,12 @@
 import Ember from 'ember';
 import layout from '../templates/components/pesto-button';
-import ParsleyMixin from '../mixins/pesto-parsley-mixin';
-
+import PestoUtilsMixin from '../mixins/pesto-utils-mixin';
 
 /**
  * This component is responsible to render bootstrap button and validate the parsley form before calling the action.
  * @author bcpoiri
  */
-export default Ember.Component.extend(ParsleyMixin, {
+export default Ember.Component.extend(PestoUtilsMixin, {
 	/**
 	 * Component layout.
 	 */

@@ -1,13 +1,12 @@
 import Ember from 'ember';
 import layout from '../templates/components/pesto-radio-button';
-import ParsleyMixin from '../mixins/pesto-parsley-mixin';
-
+import PestoFieldValidationMixin from '../mixins/pesto-field-validation-mixin';
 
 /**
  * This component is responsible to render a radio button.
  * @author bcpoiri
  */
-export default Ember.Component.extend(ParsleyMixin, {
+export default Ember.Component.extend(PestoFieldValidationMixin, {
 
 	/**
 	 * Conditional classes passed to the component.

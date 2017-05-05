@@ -1,13 +1,12 @@
 import Ember from 'ember';
 import layout from '../templates/components/pesto-checkbox';
-import ParsleyMixin from "../mixins/pesto-parsley-mixin";
-
+import PestoFieldValidationMixin from '../mixins/pesto-field-validation-mixin';
 
 /**
  * This component is responsible renders a checkbox input.
  * @module
  */
-export default Ember.Component.extend(ParsleyMixin, {
+export default Ember.Component.extend(PestoFieldValidationMixin, {
 
 	/**
 	 * Component layout.

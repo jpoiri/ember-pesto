@@ -30,6 +30,7 @@ export default Ember.Mixin.create({
     /**
     * By default show only the first error message.
     */
+    showOnlyFirstErrorMessage: true,
 
     classNameBindings: [
         'hasFeedbackClass:has-feedback',

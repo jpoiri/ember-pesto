@@ -1,8 +1,8 @@
 import Ember from 'ember';
 import layout from '../templates/components/pesto-select';
-import PestoFieldValidationMixin from '../mixins/pesto-field-validation-mixin';
-import PestoUIMixin from '../mixins/pesto-ui-mixin';
-import ItemSortingMixin from '../mixins/pesto-items-sorting-mixin';
+import PestoFieldValidationMixin from '../mixins/pesto-field-validation';
+import PestoUIMixin from '../mixins/pesto-ui';
+import ItemSortingMixin from '../mixins/pesto-items-sorting';
 
 /**
  * This component is responsible to render a select.

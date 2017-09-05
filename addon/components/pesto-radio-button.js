@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/pesto-radio-button';
-import PestoFieldValidationMixin from '../mixins/pesto-field-validation-mixin';
+import PestoFieldValidationMixin from '../mixins/pesto-field-validation';
 
 /**
  * This component is responsible to render a radio button.

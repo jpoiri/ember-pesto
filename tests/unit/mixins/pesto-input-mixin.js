@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import PestoInputMixinMixin from 'ember-pesto/mixins/pesto-input-mixin';
+import PestoInputMixinMixin from 'ember-pesto/mixins/pesto-input';
 import { module, test } from 'qunit';
 
 module('Unit | Mixin | pesto input mixin');

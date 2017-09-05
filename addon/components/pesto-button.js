@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/pesto-button';
-import PestoUtilsMixin from '../mixins/pesto-utils-mixin';
+import PestoUtilsMixin from '../mixins/pesto-utils';
 
 /**
  * This component is responsible to render bootstrap button and validate the parsley form before calling the action.

@@ -1,16 +1,16 @@
 import Ember from 'ember';
 import layout from '../templates/components/pesto-input';
-import InputMixin from '../mixins/pesto-input-mixin';
-import PestoUIMixin from '../mixins/pesto-ui-mixin';
-import PestoFieldValidationMixin from '../mixins/pesto-field-validation-mixin';
-
+import PestoInputMixin from '../mixins/pesto-input';
+import PestoUIMixin from '../mixins/pesto-ui';
+import PestoPopoverUIMixin from '../mixins/pesto-popover-ui';
+import PestoFieldValidationMixin from '../mixins/pesto-field-validation';
 
 /**
  * This component is responsible to render an input.
  * @module
  * @author bcpoiri
  */
-export default Ember.Component.extend(InputMixin, PestoFieldValidationMixin, PestoUIMixin, {
+export default Ember.Component.extend(PestoInputMixin, PestoFieldValidationMixin, PestoUIMixin, PestoPopoverUIMixin, {
 
 	/**
 	 * Component layout.

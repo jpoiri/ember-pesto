@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import layout from '../templates/components/pesto-form';
-import PestoUtilsMixin from '../mixins/pesto-utils-mixin';
-import PestoFormValidationMixin from '../mixins/pesto-form-validation-mixin';
+import PestoUtilsMixin from '../mixins/pesto-utils';
+import PestoFormValidationMixin from '../mixins/pesto-form-validation';
 
 /**
  * This component is responsive to render a form that enables parsley validation.

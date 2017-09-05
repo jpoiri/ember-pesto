@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import PestoItemsSortingMixinMixin from 'ember-pesto/mixins/pesto-items-sorting-mixin';
+import PestoItemsSortingMixinMixin from 'ember-pesto/mixins/pesto-items-sorting';
 import { module, test } from 'qunit';
 
 module('Unit | Mixin | pesto items sorting mixin');

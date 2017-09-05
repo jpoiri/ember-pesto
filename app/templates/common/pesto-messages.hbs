@@ -1,17 +1,21 @@
-{{#if showSuccessMessage}}
-    <div class="help-block">{{successMessage}}</div>
-{{/if}}
+{{#unless showMessagesAsPopover}}
+	{{#if successMessageVisible}}
+		<div class="help-block">{{successMessage}}</div>
+	{{/if}}
 
-{{#if showHelpMessage}}
-    <div class="help-block">{{helpMessage}}</div>
-{{/if}}
+	{{#if helpMessageVisible}}
+		<div class="help-block">{{helpMessage}}</div>
+	{{/if}}
 
-{{#if showErrorMessages}}
-    {{#if showFirstErrorMessageOnly}}
-        <div class="help-block">{{errorMessages.firstObject}}</div>
-    {{else}}
-        {{#each errorMessages as |errorMessage|}}
-            <div class="help-block">{{errorMessage}}</div>
-        {{/each}}
-    {{/if}}
-{{/if}}
+	{{#if errorMessagesVisible}}
+		{{#if showOnlyFirstErrorMessage}}
+			<div class="help-block">{{errorMessages.firstObject}}</div>
+		{{else}}
+			{{#each errorMessages as |errorMessage|}}
+				<div class="help-block">{{errorMessage}}</div>
+			{{/each}}
+		{{/if}}
+	{{/if}}
+{{/unless}}
+
+

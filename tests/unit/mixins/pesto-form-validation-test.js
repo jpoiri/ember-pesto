@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import PestoFormValidationMixinMixin from 'ember-pesto/mixins/pesto-form-validation-mixin';
+import PestoFormValidationMixinMixin from 'ember-pesto/mixins/pesto-form-validation';
 import { module, test } from 'qunit';
 
 module('Unit | Mixin | pesto form validation mixin');

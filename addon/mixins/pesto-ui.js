@@ -1,17 +1,11 @@
 import Ember from 'ember';
 
-const { computed } = Ember;
+const { computed, observer, isEmpty } = Ember;
 
 /**
 * This mixin is responsible to handle the validation ui.
 */
 export default Ember.Mixin.create({
-
-	  classNameBindings: [
-    	'hasFeedbackClass:has-feedback',
-    	'hasErrorClass:has-error',
-    	'hasSuccessClass:has-success'
-    ],
 
     /**
     * By default show the error state.
@@ -36,8 +30,13 @@ export default Ember.Mixin.create({
     /**
     * By default show only the first error message.
     */
-    showFirstErrorMessageOnly: true,
-  
+
+    classNameBindings: [
+        'hasFeedbackClass:has-feedback',
+        'hasErrorClass:has-error',
+        'hasSuccessClass:has-success'
+    ],
+
     /**
     * Returns true if the has-feedback class is rendered.
     *
@@ -138,7 +137,7 @@ export default Ember.Mixin.create({
     *
     * @returns {boolean}
     */
-    showSuccessMessage: computed('dirty', 'valid', 'showSuccessState', 'showMessages', function() {
+    successMessageVisible: computed('dirty', 'valid', 'showSuccessState', 'showMessages', function() {
     	return this.get('dirty') && this.get('valid') && this.get('showSuccessState') && this.get('showMessages');
     }),
 
@@ -153,7 +152,7 @@ export default Ember.Mixin.create({
     *
     * @returns {boolean}
     */
-    showErrorMessages: computed('dirty', 'valid', 'showErrorState', 'showMessages', function() {
+    errorMessagesVisible: computed('dirty', 'valid', 'showErrorState', 'showMessages', function() {
        	return this.get('dirty') && !this.get('valid') && this.get('showErrorState') && this.get('showMessages');
     }),
 
@@ -166,8 +165,7 @@ export default Ember.Mixin.create({
     *
     * @returns {boolean}
     */
-    showHelpMessage: computed('dirty', 'valid', 'showErrorState', function() {
+    helpMessageVisible: computed('dirty', 'valid', 'showErrorState', function() {
         return (!this.get('dirty') || this.get('dirty') && !this.get('valid') && !this.get('showErrorState'));
     })
-
 });

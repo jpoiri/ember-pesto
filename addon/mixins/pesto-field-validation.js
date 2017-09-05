@@ -123,6 +123,7 @@ export default Ember.Mixin.create({
 	 * This event handler is responsible to inject custom validators in the component.
 	 */
 	didInsertElement() {
+		this._super();
 		const validationSelector = this.get('validationSelector');
 		if (!isNone(validationSelector)) {
 			// Enable parsley instance.
@@ -194,7 +195,7 @@ export default Ember.Mixin.create({
 		if (!isEmpty(this.get('errorMessage'))) {
 			errorMessages.pushObject(this.get('errorMessage'));
 		} else {
-			for (let i = 0; i <= field.getErrorsMessages().length; i++) {
+			for (let i = 0; i < field.getErrorsMessages().length; i++) {
 				errorMessages.pushObject(field.getErrorsMessages()[i]);
 			}
 		}

@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/pesto-checkbox';
-import PestoFieldValidationMixin from '../mixins/pesto-field-validation-mixin';
+import PestoFieldValidationMixin from '../mixins/pesto-field-validation';
 
 /**
  * This component is responsible renders a checkbox input.

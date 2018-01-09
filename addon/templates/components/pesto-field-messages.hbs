@@ -1,0 +1,41 @@
+{{#unless showMessagesAsPopover}}
+
+	{{#if successMessageVisible}}
+
+		{{#if hasBlock}}
+			{{yield successMessage "success"}}
+		{{else}}
+			{{pesto-help-block text=successMessage}}
+		{{/if}}
+
+	{{/if}}
+
+	{{#if errorMessagesVisible}}
+
+		{{#if showOnlyFirstErrorMessage}}
+
+			{{#if hasBlock}}
+				{{yield errorMessages.firstObject "error"}}
+			{{else}}
+				{{pesto-help-block text=errorMessages.firstObject}}
+			{{/if}}
+
+		{{else}}
+
+			{{#if hasBlock}}
+				{{#each errorMessages as |errorMessage|}}
+					{{yield errorMessage "error"}}
+				{{/each}}
+			{{else}}
+				{{#each errorMessages as |errorMessage|}}
+					{{pesto-help-block text=errorMessage}}
+				{{/each}}
+			{{/if}}
+
+		{{/if}}
+
+	{{/if}}
+
+
+{{/unless}}
+

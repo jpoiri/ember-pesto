@@ -1,7 +1,7 @@
 {{!-- compare if two fields are equal --}}
 
 {{#if equalTo}}
-    {{mx-validator action=(action "validateEqualTo")
+    {{pesto-validator action=(action "validateEqualTo")
                    message=equalToMessage
                    validationSelector=validationSelector}}
 {{/if}}
@@ -9,7 +9,7 @@
 {{!-- Compare if field 1 is greater than field 2 --}}
 
 {{#if greaterTo}}
-    {{mx-validator action=(action "validateGreaterTo")
+    {{pesto-validator action=(action "validateGreaterTo")
                    message=greaterToMessage
                    validationSelector=validationSelector}}
 {{/if}}
@@ -17,7 +17,7 @@
 {{!-- Compare if field 1 is greater or equal than field 2 --}}
 
 {{#if greaterOrEqualTo}}
-    {{mx-validator action=(action "validateGreaterOrEqualTo")
+    {{pesto-validator action=(action "validateGreaterOrEqualTo")
                    message=greaterOrEqualToMessage
                    validationSelector=validationSelector}}
 {{/if}}
@@ -25,7 +25,7 @@
 {{!-- Compare if field 1 is lesser than field 2 --}}
 
 {{#if lesserTo}}
-    {{mx-validator action=(action "validateLesserTo")
+    {{pesto-validator action=(action "validateLesserTo")
                    message=lesserToMessage
                    validationSelector=validationSelector}}
 {{/if}}
@@ -33,7 +33,7 @@
 {{!-- Compare if field 1 is lesser or equal than field 2 --}}
 
 {{#if lesserOrEqualTo}}
-    {{mx-validator action=(action "validateLesserOrEqualTo")
+    {{pesto-validator action=(action "validateLesserOrEqualTo")
                    message=lesserOrEqualToMessage
                    validationSelector=validationSelector}}
 {{/if}}

@@ -2,16 +2,27 @@
 
 {{#if inputWidthClass}}
 	<div class="{{inputWidthClass}}">
-        {{partial "components/pesto-input/input"}}
+		{{partial "components/pesto-input/input"}}
 	</div>
 {{else}}
-    {{partial "components/pesto-input/input"}}
+	{{partial "components/pesto-input/input"}}
 {{/if}}
 
-<span class="form-control-feedback {{formControlFeedbackClass}}"></span>
+{{#if helpTextVisible}}
+	{{pesto-help-block text=helpText}}
+{{/if}}
 
-{{partial "common/pesto-messages"}}
-
-{{yield (hash validator=(component "pesto-validator" validationSelector=validationSelector))}}
+{{pesto-input-icon iconClass=formControlFeedbackClass}}
 
 {{partial "common/pesto-custom-validators"}}
+
+{{yield (hash validator=(component "pesto-validator" validationSelector=validationSelector)
+					 messages=(component "pesto-field-messages" showMessagesAsPopover=showMessagesAsPopover
+								successMessageVisible=successMessageVisible
+								successMessage=successMessage
+								errorMessagesVisible=errorMessagesVisible
+								showOnlyFirstErrorMessage=showOnlyFirstErrorMessage
+								errorMessages=errorMessages))}}
+
+
+

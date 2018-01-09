@@ -28,6 +28,8 @@ export default Ember.Mixin.create({
 
 	hasAfterValidationStateChangeAction: computed.notEmpty('afterValidationStateChangeAction'),
 
+	pestoMessages: Ember.inject.service(),
+
 	/**
 	 * Returns the html type attribute based on the component type property.
 	 * @returns {string}
@@ -141,6 +143,7 @@ export default Ember.Mixin.create({
 				this.triggerAfterValidationAction();
 			});
 			$(validationSelector).parsley().on('field:success', () => {
+				this.get('pestoMessages').addMessage(this.get('elementId'), this.get('successMessage'), 'success');
 				this.set('valid', true);
 				this.triggerAfterValidationSuccessAction();
 			});
@@ -194,9 +197,11 @@ export default Ember.Mixin.create({
 		const errorMessages = Ember.A();
 		if (!isEmpty(this.get('errorMessage'))) {
 			errorMessages.pushObject(this.get('errorMessage'));
+			this.get('pestoMessages').addMessage(this.get('elementId'), this.get('errorMessage'), 'error');
 		} else {
 			for (let i = 0; i < field.getErrorsMessages().length; i++) {
 				errorMessages.pushObject(field.getErrorsMessages()[i]);
+				this.get('pestoMessages').addMessage(this.get('elementId'), field.getErrorsMessages()[i], 'error');
 			}
 		}
 		return errorMessages;

@@ -3,11 +3,6 @@ import Ember from 'ember';
 export default Ember.Mixin.create({
 
 	/**
-	 * Classes that will be passed to the component.
-	 */
-	classNames: ['form-group'],
-
-	/**
 	 * Returns the input id.
 	 * @returns {string}
 	 */

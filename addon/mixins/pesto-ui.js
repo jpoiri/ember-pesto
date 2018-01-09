@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-const { computed, observer, isEmpty } = Ember;
+const { computed } = Ember;
 
 /**
 * This mixin is responsible to handle the validation ui.
@@ -166,7 +166,7 @@ export default Ember.Mixin.create({
     *
     * @returns {boolean}
     */
-    helpMessageVisible: computed('dirty', 'valid', 'showErrorState', function() {
+    helpTextVisible: computed('dirty', 'valid', 'showErrorState', function() {
         return (!this.get('dirty') || this.get('dirty') && !this.get('valid') && !this.get('showErrorState'));
     })
 });

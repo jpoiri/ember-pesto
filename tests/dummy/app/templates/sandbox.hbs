@@ -1,15 +1,40 @@
-{{pesto-input required=true
-				  requiredMessage="This field is required"
-				  type="number"
-				  typeMessage="Must be a number"
-				  minimumLength=2
-				  errorIconClass="fa fa-remove"
-				  showSuccessState=true
-				  showErrorState=true
-				  showMessagesAsPopover=true
-				  showOnlyFirstErrorMessage=false
-				  popoverPlacement="bottom"
-				  successIconClass="fa fa-plus"
-				  successMessage="The field is valid"
-				  helpMessage="Enter something in the field"
-				  iconClass="fa fa-search"}}
+{{#pesto-form}}
+
+	{{#pesto-input validate=false
+						required=true
+						requiredMessage="This field is required"
+						type="number"
+						typeMessage="Must be a number"
+						minimumLength=2
+						errorIconClass="fa fa-remove"
+						showSuccessState=true
+						showErrorState=true
+						popoverPlacement="bottom"
+						successIconClass="fa fa-plus"
+						successMessage="The field is valid"
+						helpText="Enter something in the field"
+						iconClass="fa fa-search" as |input| }}
+
+	{{/pesto-input}}
+
+	{{pesto-input
+			  validate=true
+			  required=true
+			  requiredMessage="This field is required 2"
+			  type="number"
+			  typeMessage="Must be a number"
+			  minimumLength=2
+			  errorIconClass="fa fa-remove"
+			  showSuccessState=true
+			  showErrorState=true
+			  showOnlyFirstErrorMessage=false
+			  popoverPlacement="bottom"
+			  successIconClass="fa fa-plus"
+			  successMessage="The field is valid"
+			  helpText="Enter something in the field"
+			  iconClass="fa fa-search"}}
+
+	{{pesto-button label="Submit Form" validate=true}}
+
+{{/pesto-form}}
+

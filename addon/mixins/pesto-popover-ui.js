@@ -31,8 +31,8 @@ export default Ember.Mixin.create({
        if (this.get('showMessagesAsPopover')) {
            this.$(POPOVER_SELECTOR).popover({
                 content: () => {
-                    if (this.get('helpMessageVisible')) {
-                        return this.get('helpMessage');
+                    if (this.get('helpTextVisible')) {
+                        return this.get('helpText');
                     } else if (this.get('successMessageVisible')) {
                        	return this.get('successMessage');
                     } else if (this.get('errorMessagesVisible')) {
@@ -77,12 +77,12 @@ export default Ember.Mixin.create({
     * The popover is visible when showMessagesAsPopover is true and one the following is true.
     *	- errorMessagesVisible is true
     * 	- successMessageVisible is true
-    * 	- helpMessageVisible is true and the value is empty.
+    * 	- helpTextVisible is true and the value is empty.
     *
     * @returns {boolean}
     */
 	isPopoverVisibleOnFocus() {
-		return this.get('showMessagesAsPopover') && (this.get('helpMessageVisible') &&
+		return this.get('showMessagesAsPopover') && (this.get('helpTextVisible') &&
 		isEmpty(this.get('value'))) || this.get('errorMessagesVisible')|| this.get('successMessageVisible');
 	},
 

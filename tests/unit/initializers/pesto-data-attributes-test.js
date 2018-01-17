@@ -1,12 +1,13 @@
-import Ember from 'ember';
 import { initialize } from 'dummy/initializers/pesto-data-attributes';
 import { module, test } from 'qunit';
+import { run } from '@ember/runloop';
+import Application from '@ember/application';
 import destroyApp from '../../helpers/destroy-app';
 
 module('Unit | Initializer | pesto data attributes', {
   beforeEach() {
-    Ember.run(() => {
-      this.application = Ember.Application.create();
+    run(() => {
+      this.application = Application.create();
       this.application.deferReadiness();
     });
   },

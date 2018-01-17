@@ -1,14 +1,14 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
+import { isEmpty } from '@ember/utils';
 
-const { isEmpty } = Ember;
 const POPOVER_SELECTOR = 'input, select, textarea';
 
 /**
 * This mixin encapsulate the logic for the message popover.
 */
-export default Ember.Mixin.create({
+export default Mixin.create({
 
- 	/**
+	/**
     * By default message are displayed as popover.
     */
     showMessagesAsPopover: false,
@@ -24,7 +24,7 @@ export default Ember.Mixin.create({
 	*/
     popoverPlacement: 'bottom',
 
- 	/**
+	/**
     * Initialize popover.
     */
     initPopover() {
@@ -34,7 +34,7 @@ export default Ember.Mixin.create({
                     if (this.get('helpTextVisible')) {
                         return this.get('helpText');
                     } else if (this.get('successMessageVisible')) {
-                       	return this.get('successMessage');
+						return this.get('successMessage');
                     } else if (this.get('errorMessagesVisible')) {
 						if (this.get('showOnlyFirstErrorMessage')) {
 							return this.get('errorMessages').objectAt(0);
@@ -115,20 +115,20 @@ export default Ember.Mixin.create({
 	* Handle the focus in event.
     */
     focusIn(evt) {
-    		// display the popover if the help message, the error messages or success message needs to be displayed.
-    	if (this.isPopoverVisibleOnFocus()) {
+		// display the popover if the help message, the error messages or success message needs to be displayed.
+		if (this.isPopoverVisibleOnFocus()) {
             this.showPopover();
-    	}
-    	this._super(evt);
+		}
+		this._super(evt);
     },
 
 	/**
 	* Handle the focus out event.
 	*/
-   	focusOut(evt) {
-    	this.hidePopover();
-    	this._super(evt);
-   	},
+	focusOut(evt) {
+		this.hidePopover();
+		this._super(evt);
+	},
 
 	/**
 	* Handle the change event.
@@ -142,8 +142,8 @@ export default Ember.Mixin.create({
     * Handle the key up event.
     */
     keyUp(evt) {
-    	this.updatePopover();
-    	this._super(evt);
+		this.updatePopover();
+		this._super(evt);
     },
 
 	/**

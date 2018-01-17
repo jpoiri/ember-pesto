@@ -1,4 +1,8 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import { equal } from '@ember/object/computed';
+import { isEmpty, isNone } from '@ember/utils';
+import $ from 'jquery';
 import layout from '../templates/components/pesto-button';
 import PestoUtilsMixin from '../mixins/pesto-utils';
 
@@ -6,7 +10,7 @@ import PestoUtilsMixin from '../mixins/pesto-utils';
  * This component is responsible to render bootstrap button and validate the parsley form before calling the action.
  * @author bcpoiri
  */
-export default Ember.Component.extend(PestoUtilsMixin, {
+export default Component.extend(PestoUtilsMixin, {
 	/**
 	 * Component layout.
 	 */
@@ -26,13 +30,13 @@ export default Ember.Component.extend(PestoUtilsMixin, {
 
 	iconPosition: 'right',
 
-	isIconLeft: Ember.computed.equal('iconPosition', 'left'),
+	isIconLeft: equal('iconPosition', 'left'),
 
 	/**
 	 * The type of button
 	 * @default button.
 	 */
-	buttonType: Ember.computed('submit', function() {
+	buttonType: computed('submit', function() {
 		if (this.get('submit')) {
 			return 'submit';
 		}
@@ -55,7 +59,7 @@ export default Ember.Component.extend(PestoUtilsMixin, {
 	/**
 	 * Returns the context class based on the type
 	 */
-	contextClass: Ember.computed('type', function() {
+	contextClass: computed('type', function() {
 		switch (this.get('type')) {
 			case 'primary':
 				return 'btn-primary';
@@ -76,7 +80,7 @@ export default Ember.Component.extend(PestoUtilsMixin, {
 	/**
 	 * Returns the size class based on the size
 	 */
-	sizeClass: Ember.computed('size', function() {
+	sizeClass: computed('size', function() {
 		let btnSize;
 		switch (this.get('size')) {
 			case 'sm':
@@ -108,7 +112,7 @@ export default Ember.Component.extend(PestoUtilsMixin, {
 	/**
 	 * Returns the block class based on the block attribute.
 	 */
-	blockClass: Ember.computed('block', function() {
+	blockClass: computed('block', function() {
 		if (this.get('block')) {
 			return 'btn-block';
 		}
@@ -117,7 +121,7 @@ export default Ember.Component.extend(PestoUtilsMixin, {
 	/**
 	 * Returns the active class if the button is active.
 	 */
-	activeClass: Ember.computed('active', function() {
+	activeClass: computed('active', function() {
 		if (this.get('active')) {
 			return 'active';
 		}
@@ -127,7 +131,7 @@ export default Ember.Component.extend(PestoUtilsMixin, {
 	/**
 	 * Returns the disabled class if the button is disabled.
 	 */
-	disabledClass: Ember.computed('disabled', function() {
+	disabledClass: computed('disabled', function() {
 		if (this.get('disabled')) {
 			return 'disabled';
 		}
@@ -140,10 +144,10 @@ export default Ember.Component.extend(PestoUtilsMixin, {
 	 */
 	getForm() {
 		const validateForm = this.get('form');
-		if (!Ember.isEmpty(validateForm) && !Ember.isEmpty(Ember.$(`#${validateForm}`))) {
-			return Ember.$(`#${validateForm}`);
+		if (!isEmpty(validateForm) && !isEmpty($(`#${validateForm}`))) {
+			return $(`#${validateForm}`);
 		}
-		return Ember.$(this.element).closest('form');
+		return $(this.element).closest('form');
 	},
 
 	/**
@@ -159,11 +163,11 @@ export default Ember.Component.extend(PestoUtilsMixin, {
 				const valid = ctx.validate({
 					group: this.get('validateGroup')
 				});
-				if (valid && !Ember.isNone(this.get('action'))) {
+				if (valid && !isNone(this.get('action'))) {
 					this.get('action')();
 				}
 			} else {
-				if (!Ember.isNone(this.get('action'))) {
+				if (!isNone(this.get('action'))) {
 					this.get('action')();
 				}
 			}

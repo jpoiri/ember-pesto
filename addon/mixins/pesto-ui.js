@@ -1,11 +1,10 @@
-import Ember from 'ember';
-
-const { computed } = Ember;
+import Mixin from '@ember/object/mixin';
+import { computed } from '@ember/object'
 
 /**
 * This mixin is responsible to handle the validation ui.
 */
-export default Ember.Mixin.create({
+export default Mixin.create({
 
     /**
     * By default show the error state.
@@ -48,7 +47,7 @@ export default Ember.Mixin.create({
     * @returns {boolean}
     */
     hasFeedbackClass: computed('hasIcon', 'dirty', function() {
-    	return (this.get('hasIcon') || this.get('dirty'));
+		return (this.get('hasIcon') || this.get('dirty'));
     }),
   
     /**
@@ -62,7 +61,7 @@ export default Ember.Mixin.create({
     * @returns {boolean}
     */
     hasErrorClass: computed('dirty', 'valid', 'showErrorState', function() {
-    	return (this.get('dirty') && !this.get('valid') && this.get('showErrorState'));
+		return (this.get('dirty') && !this.get('valid') && this.get('showErrorState'));
     }),
 
     /**
@@ -118,13 +117,13 @@ export default Ember.Mixin.create({
     * @returns {string}
     */
     formControlFeedbackClass: computed('dirty', 'valid', 'hasErrorIcon',
-    	'hasSuccessIcon', 'showSuccessState', 'showErrorState', function() {
-    	if (this.get('dirty') && this.get('valid') && this.get('hasSuccessIcon') && this.get('showSuccessState')) {
-    		return this.get('successIconClass');
-    	} else if (this.get('dirty') && !this.get('valid') && this.get('hasErrorIcon') && this.get('showErrorState')) {
-    		return this.get('errorIconClass');
-    	}
-    	return this.get('iconClass');
+		'hasSuccessIcon', 'showSuccessState', 'showErrorState', function() {
+		if (this.get('dirty') && this.get('valid') && this.get('hasSuccessIcon') && this.get('showSuccessState')) {
+			return this.get('successIconClass');
+		} else if (this.get('dirty') && !this.get('valid') && this.get('hasErrorIcon') && this.get('showErrorState')) {
+			return this.get('errorIconClass');
+		}
+		return this.get('iconClass');
     }),
 
     /**
@@ -139,7 +138,7 @@ export default Ember.Mixin.create({
     * @returns {boolean}
     */
     successMessageVisible: computed('dirty', 'valid', 'showSuccessState', 'showMessages', function() {
-    	return this.get('dirty') && this.get('valid') && this.get('showSuccessState') && this.get('showMessages');
+		return this.get('dirty') && this.get('valid') && this.get('showSuccessState') && this.get('showMessages');
     }),
 
     /**
@@ -154,7 +153,7 @@ export default Ember.Mixin.create({
     * @returns {boolean}
     */
     errorMessagesVisible: computed('dirty', 'valid', 'showErrorState', 'showMessages', function() {
-       	return this.get('dirty') && !this.get('valid') && this.get('showErrorState') && this.get('showMessages');
+		return this.get('dirty') && !this.get('valid') && this.get('showErrorState') && this.get('showMessages');
     }),
 
     /**

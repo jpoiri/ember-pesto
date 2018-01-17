@@ -1,11 +1,12 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
 import layout from '../templates/components/pesto-label';
 
 /**
  * This components renders a label tag.
  * @author bcpoiri
  */
-export default Ember.Component.extend({
+export default Component.extend({
 
 	/**
 	 * Component layout.
@@ -41,7 +42,7 @@ export default Ember.Component.extend({
 	 * Returns the aria-label property only when visible is set to false.
 	 * @returns {string}
 	 */
-	ariaLabelComputed: Ember.computed('label', 'visible', function () {
+	ariaLabelComputed: computed('label', 'visible', function () {
 		if (!this.get('visible')) {
 			return this.get('value');
 		}

@@ -1,4 +1,9 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { and } from '@ember/object/computed';
+import { computed } from '@ember/object';
+import { isNone } from '@ember/utils';
+import { A } from '@ember/array';
+import $ from 'jquery';
 import layout from '../templates/components/pesto-checkbox';
 import PestoFieldValidationMixin from '../mixins/pesto-field-validation';
 
@@ -6,7 +11,7 @@ import PestoFieldValidationMixin from '../mixins/pesto-field-validation';
  * This component is responsible renders a checkbox input.
  * @module
  */
-export default Ember.Component.extend(PestoFieldValidationMixin, {
+export default Component.extend(PestoFieldValidationMixin, {
 
 	/**
 	 * Component layout.
@@ -23,7 +28,7 @@ export default Ember.Component.extend(PestoFieldValidationMixin, {
 	/**
 	 * Add the disabled class on component only its part of group and disabled.
 	 */
-	groupAndDisabled: Ember.computed.and('group', 'disabled'),
+	groupAndDisabled: and('group', 'disabled'),
 
 	/**
 	 * The label is visible by default.
@@ -34,7 +39,7 @@ export default Ember.Component.extend(PestoFieldValidationMixin, {
 	 * Returns the input id.
 	 * @returns {string}
 	 */
-	inputId: Ember.computed('elementId', function () {
+	inputId: computed('elementId', function () {
 		return `${this.get('elementId')}-input`;
 	}),
 
@@ -44,10 +49,10 @@ export default Ember.Component.extend(PestoFieldValidationMixin, {
 	 * if use standalone the value is true/false
 	 * if use in a group, the checkbox is only check if value is included in the array.
 	 */
-	checked: Ember.computed('groupValue', 'value', 'group', {
+	checked: computed('groupValue', 'value', 'group', {
 		get() {
 			if (this.get('group')) {
-				if (Ember.isNone(this.get('groupValue'))) {
+				if (isNone(this.get('groupValue'))) {
 					return false;
 				}
 				return this.get('groupValue').includes(this.get('value'));
@@ -56,8 +61,8 @@ export default Ember.Component.extend(PestoFieldValidationMixin, {
 		},
 		set(key, checked) {
 			if (this.get('group')) {
-				if (Ember.isNone(this.get('groupValue'))) {
-					this.set('groupValue', Ember.A());
+				if (isNone(this.get('groupValue'))) {
+					this.set('groupValue', A());
 				}
 				if (checked) {
 					this.get('groupValue').pushObject(this.get('value'));
@@ -75,7 +80,7 @@ export default Ember.Component.extend(PestoFieldValidationMixin, {
 	 * Listens when the checkbox is clicked on.
 	 */
 	change() {
-		if (!Ember.isNone(this.get('valueChangeAction'))) {
+		if (!isNone(this.get('valueChangeAction'))) {
 			this.get('valueChangeAction')(this.get('checked'));
 		}
 	},
@@ -84,7 +89,7 @@ export default Ember.Component.extend(PestoFieldValidationMixin, {
 	 * Returns the JQuery selector that matches the element to attach validation on.
 	 * @returns {string}
 	 */
-	validationSelector: Ember.computed(function () {
+	validationSelector: computed(function () {
 		return `#${this.get('inputId')}`;
 	}),
 
@@ -95,7 +100,7 @@ export default Ember.Component.extend(PestoFieldValidationMixin, {
 		this._super(...arguments);
 		// this is a hack because the checkbox helper doesn't support binding a value property.
 		if (this.get('group')) {
-			Ember.$(this.get('validationSelector')).attr('value', this.get('value'));
+			$(this.get('validationSelector')).attr('value', this.get('value'));
 		}
 	}
 

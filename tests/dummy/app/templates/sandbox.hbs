@@ -15,6 +15,8 @@
 						helpText="Enter something in the field"
 						iconClass="fa fa-search" as |input| }}
 
+		{{input.messages}}
+
 	{{/pesto-input}}
 
 	{{pesto-input
@@ -35,6 +37,7 @@
 			  iconClass="fa fa-search"}}
 
 	{{pesto-button label="Submit Form" validate=true}}
+
 
 {{/pesto-form}}
 

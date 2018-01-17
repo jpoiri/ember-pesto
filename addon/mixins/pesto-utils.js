@@ -1,6 +1,9 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
+import { isNone } from '@ember/utils';
+import $ from 'jquery';
 
-export default Ember.Mixin.create({
+
+export default Mixin.create({
 
 	/**
 	 * Returns the parsley context based on fields passed.
@@ -14,12 +17,12 @@ export default Ember.Mixin.create({
 			 * @param fields The list of fields to reset.
 			 */
 			reset() {
-				if (!Ember.isNone(fields)) {
-					Ember.$(fields).each(function() {
+				if (!isNone(fields)) {
+					$(fields).each(function() {
 						// reset parsley field.
-						Ember.$(this).parsley().reset();
-						if (Ember.$(this).is('form')) {
-							Ember.$('form .form-control-feedback').remove();
+						$(this).parsley().reset();
+						if ($(this).is('form')) {
+							$('form .form-control-feedback').remove();
 						}
 					});
 				}
@@ -30,10 +33,10 @@ export default Ember.Mixin.create({
 			 */
 			destroy() {
 				// destroy all parsley fields.
-				if (!Ember.isNone(fields)) {
-					Ember.$(fields).each(function() {
+				if (!isNone(fields)) {
+					$(fields).each(function() {
 						// remove parsley on field.
-						Ember.$(this).parsley().destroy();
+						$(this).parsley().destroy();
 					});
 				}
 			},
@@ -47,19 +50,19 @@ export default Ember.Mixin.create({
 				force: false
 			}) {
 				// only validate if validate it set to true.
-				if (!Ember.isNone(fields)) {
+				if (!isNone(fields)) {
 					let valid = true;
 					// loop through every field who has parsley attach.
-					Ember.$(fields).each(function() {
-						if (Ember.$(this).is('form')) {
-							if (!Ember.$(this).parsley().isValid({
+					$(fields).each(function() {
+						if ($(this).is('form')) {
+							if (!$(this).parsley().isValid({
 									group: opts.group,
 									force: opts.force
 								}) && valid) {
 								valid = false;
 							}
 						} else {
-							if (!Ember.$(this).parsley().isValid({
+							if (!$(this).parsley().isValid({
 									force: opts.force
 								}) && valid) {
 								valid = false;
@@ -73,15 +76,15 @@ export default Ember.Mixin.create({
 			validate(opts = {
 				force: false
 			}) {
-				if (!Ember.isNone(fields)) {
+				if (!isNone(fields)) {
 					let valid = true;
-					Ember.$(fields).each(function() {
-						if (Ember.$(this).parsley().validate({
+					$(fields).each(function() {
+						if ($(this).parsley().validate({
 								group: opts.group,
 								force: opts.force
 							}) !== true) {
 							if (valid) {
-								Ember.$(this).focus();
+								$(this).focus();
 							}
 							valid = false;
 						}

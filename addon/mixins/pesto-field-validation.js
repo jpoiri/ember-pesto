@@ -1,8 +1,12 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
+import { computed, observer } from '@ember/object';
+import { isNone, isEqual, isEmpty } from '@ember/utils';
+import { run } from '@ember/runloop';
+import { inject } from '@ember/service';
+import { A } from '@ember/array';
+import $ from 'jquery';
 
-const { computed, $, isNone, isEqual, isEmpty, run, observer } = Ember;
-
-export default Ember.Mixin.create({
+export default Mixin.create({
 
 	validation: true,
 
@@ -28,7 +32,7 @@ export default Ember.Mixin.create({
 
 	hasAfterValidationStateChangeAction: computed.notEmpty('afterValidationStateChangeAction'),
 
-	pestoMessages: Ember.inject.service(),
+	pestoMessages: inject(),
 
 	/**
 	 * Returns the html type attribute based on the component type property.
@@ -194,7 +198,7 @@ export default Ember.Mixin.create({
 	 * @returns {array}
 	 */
 	getErrorMessages(field) {
-		const errorMessages = Ember.A();
+		const errorMessages = A();
 		if (!isEmpty(this.get('errorMessage'))) {
 			errorMessages.pushObject(this.get('errorMessage'));
 			this.get('pestoMessages').addMessage(this.get('elementId'), this.get('errorMessage'), 'error');

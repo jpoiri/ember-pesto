@@ -1,4 +1,7 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { isNone } from '@ember/utils';
+import { computed } from '@ember/object';
+import $ from 'jquery';
 import layout from '../templates/components/pesto-form';
 import PestoUtilsMixin from '../mixins/pesto-utils';
 import PestoFormValidationMixin from '../mixins/pesto-form-validation';
@@ -7,7 +10,7 @@ import PestoFormValidationMixin from '../mixins/pesto-form-validation';
  * This component is responsive to render a form that enables parsley validation.
  * @author bcpoiri
  */
-export default Ember.Component.extend(PestoFormValidationMixin, PestoUtilsMixin, {
+export default Component.extend(PestoFormValidationMixin, PestoUtilsMixin, {
 	/**
 	 * Component layout
 	 */
@@ -39,12 +42,12 @@ export default Ember.Component.extend(PestoFormValidationMixin, PestoUtilsMixin,
 				group: this.get('validateGroup')
 			});
 			if (valid) {
-				if (!Ember.isNone(this.get('action'))) {
+				if (!isNone(this.get('action'))) {
 					this.get('action')();
 				}
 			}
 		} else {
-			if (!Ember.isNone(this.get('action'))) {
+			if (!isNone(this.get('action'))) {
 				this.get('action')();
 			}
 		}
@@ -53,7 +56,7 @@ export default Ember.Component.extend(PestoFormValidationMixin, PestoUtilsMixin,
 	/**
 	 * Returns the form class based on the type of form
 	 */
-	typeClass: Ember.computed('type', function () {
+	typeClass: computed('type', function () {
 		switch (this.get('type')) {
 			case 'inline':
 				return 'form-inline';
@@ -67,13 +70,13 @@ export default Ember.Component.extend(PestoFormValidationMixin, PestoUtilsMixin,
 	/**
 	 * Returns the object to validate.
 	 */
-	validationSelector: Ember.computed(function() {
+	validationSelector: computed(function() {
 		return this.element;
 	}),
 
 	didInsertElement() {
 		this._super(...arguments);
-		Ember.$(this.element).off('submit.Parsley');
+		$(this.element).off('submit.Parsley');
 	},
 
 });

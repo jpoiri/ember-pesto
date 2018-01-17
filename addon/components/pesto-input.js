@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/pesto-input';
 import PestoInputMixin from '../mixins/pesto-input';
 import PestoUIMixin from '../mixins/pesto-ui';
@@ -10,7 +10,7 @@ import PestoFieldValidationMixin from '../mixins/pesto-field-validation';
  * @module
  * @author bcpoiri
  */
-export default Ember.Component.extend(PestoInputMixin, PestoFieldValidationMixin, PestoUIMixin, PestoPopoverUIMixin, {
+export default Component.extend(PestoInputMixin, PestoFieldValidationMixin, PestoUIMixin, PestoPopoverUIMixin, {
 
 	/**
 	 * Component layout.

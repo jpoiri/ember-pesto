@@ -1,20 +1,19 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { inject } from '@ember/service';
 import layout from '../templates/components/pesto-form-messages';
 
-const { computed } = Ember;
+export default Component.extend({
 
-export default Ember.Component.extend({
+	layout,
 
-  	layout,
+	showGlobalOnly: false,
 
-  	showGlobalOnly: false,
+	pestoMessages: inject(),
 
-  	pestoMessages: Ember.inject.service(),
-
-  	init() {
+	init() {
 		this._super(...arguments);
-  		this.get('pestoMessages').on('newMessage', this, () => {
-  			this.set('messages', this.get('pestoMessages').getMessages(this.get('showGlobalOnly')));
-  		});
-  	}
+		this.get('pestoMessages').on('newMessage', this, () => {
+			this.set('messages', this.get('pestoMessages').getMessages(this.get('showGlobalOnly')));
+		});
+	}
 });

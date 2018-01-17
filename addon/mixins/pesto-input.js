@@ -1,12 +1,13 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
+import { computed } from '@ember/object';
 
-export default Ember.Mixin.create({
+export default Mixin.create({
 
 	/**
 	 * Returns the input id.
 	 * @returns {string}
 	 */
-	inputId: Ember.computed('elementId', function() {
+	inputId: computed('elementId', function() {
 		return `${this.get('elementId')}-input`;
 	}),
 
@@ -24,7 +25,7 @@ export default Ember.Mixin.create({
 	 * Returns the JQuery selector that matches the element to attach validation on.
 	 * @returns {string}
 	 */
-	validationSelector: Ember.computed(function() {
+	validationSelector: computed(function() {
 		return `#${this.get('inputId')}`;
 	}),
 

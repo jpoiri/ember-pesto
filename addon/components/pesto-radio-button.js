@@ -1,4 +1,6 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import { isNone } from '@ember/utils';
 import layout from '../templates/components/pesto-radio-button';
 import PestoFieldValidationMixin from '../mixins/pesto-field-validation';
 
@@ -6,7 +8,7 @@ import PestoFieldValidationMixin from '../mixins/pesto-field-validation';
  * This component is responsible to render a radio button.
  * @author bcpoiri
  */
-export default Ember.Component.extend(PestoFieldValidationMixin, {
+export default Component.extend(PestoFieldValidationMixin, {
 
 	/**
 	 * Conditional classes passed to the component.
@@ -27,7 +29,7 @@ export default Ember.Component.extend(PestoFieldValidationMixin, {
 	 * Returns the input id.
 	 * @returns {string}
 	 */
-	inputId: Ember.computed('elementId', function() {
+	inputId: computed('elementId', function() {
 		return `${this.get('elementId')}-input`;
 	}),
 
@@ -35,7 +37,7 @@ export default Ember.Component.extend(PestoFieldValidationMixin, {
 	 * Returns true if the radio button should be checked, otherwise returns false.
 	 * @returns {boolean}
 	 */
-	isChecked: Ember.computed('value', 'groupValue', function() {
+	isChecked: computed('value', 'groupValue', function() {
 		return this.get('groupValue') === this.get('value');
 	}),
 
@@ -44,7 +46,7 @@ export default Ember.Component.extend(PestoFieldValidationMixin, {
 	 */
 	change() {
 		this.set('groupValue', this.get('value'));
-		if (!Ember.isNone(this.get('valueChangeAction'))) {
+		if (!isNone(this.get('valueChangeAction'))) {
 			this.get('valueChangeAction')(this.get('value'));
 		}
 	},
@@ -53,7 +55,7 @@ export default Ember.Component.extend(PestoFieldValidationMixin, {
 	 * Returns the JQuery selector that matches the element to attach validation on.
 	 * @returns {string}
 	 */
-	validationSelector: Ember.computed(function() {
+	validationSelector: computed(function() {
 		return `#${this.get('inputId')}`;
 	}),
 

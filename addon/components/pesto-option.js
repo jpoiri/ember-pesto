@@ -1,11 +1,11 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/pesto-option';
 
 /**
  * This components renders a option tag.
  * @author bcpoiri
  */
-export default Ember.Component.extend({
+export default Component.extend({
 
 	/**
 	 * Component layout.

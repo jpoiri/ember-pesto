@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
 import layout from '../templates/components/pesto-select';
 import PestoFieldValidationMixin from '../mixins/pesto-field-validation';
 import PestoUIMixin from '../mixins/pesto-ui';
@@ -8,7 +9,7 @@ import ItemSortingMixin from '../mixins/pesto-items-sorting';
  * This component is responsible to render a select.
  * @author bcpoiri
  */
-export default Ember.Component.extend(ItemSortingMixin, PestoFieldValidationMixin, PestoUIMixin, {
+export default Component.extend(ItemSortingMixin, PestoFieldValidationMixin, PestoUIMixin, {
 
 	/**
 	 * Component layout.
@@ -39,7 +40,7 @@ export default Ember.Component.extend(ItemSortingMixin, PestoFieldValidationMixi
 	 * Returns the input id.
 	 * @returns {string}
 	 */
-	inputId: Ember.computed('elementId', function() {
+	inputId: computed('elementId', function() {
 		return `${this.get('elementId')}-input`;
 	}),
 
@@ -58,7 +59,7 @@ export default Ember.Component.extend(ItemSortingMixin, PestoFieldValidationMixi
 	 * Returns the JQuery selector that matches the element to attach validation on.
 	 * @returns {string}
 	 */
-	validationSelector: Ember.computed(function() {
+	validationSelector: computed(function() {
 		return `#${this.get('inputId')}`;
 	})
 });

@@ -1,10 +1,13 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { observer } from '@ember/object';
+import { isNone } from '@ember/utils';
+import  $ from 'jquery';
 
 /**
  * This component is responsible to handle adding parsley custom validator.
  * @author bcpoiri
  */
-export default Ember.Component.extend({
+export default Component.extend({
 
 	tagName: 'span',
 
@@ -16,7 +19,7 @@ export default Ember.Component.extend({
 	/**
 	 * Handles when the message changed, most likely to a locale changed.
 	 */
-	messageChanged: Ember.observer('message', function () {
+	messageChanged: observer('message', function () {
 		this.updateValidator();
 	}),
 
@@ -88,9 +91,9 @@ export default Ember.Component.extend({
 	 */
 	attachValidator() {
 		const validationSelector = this.get('validationSelector');
-		if (!Ember.isNone(validationSelector)) {
+		if (!isNone(validationSelector)) {
 			const validatorAttributeKey = `data-parsley-${this.get('elementId')}`;
-			Ember.$(validationSelector).attr(validatorAttributeKey, true);
+			$(validationSelector).attr(validatorAttributeKey, true);
 		}
 	},
 
@@ -144,13 +147,13 @@ export default Ember.Component.extend({
 	 * didInsertElement hook.
 	 */
 	didInsertElement() {
-		if (Ember.isNone(this.get('action'))) {
+		if (isNone(this.get('action'))) {
 			throw new Error('The action is undefined.');
 		}
-		if (Ember.isNone(this.get('message'))) {
+		if (isNone(this.get('message'))) {
 			throw new Error('The message is undefined.');
 		}
-		if (Ember.isNone(this.get('validationSelector'))) {
+		if (isNone(this.get('validationSelector'))) {
 			throw new Error('The validationSelector is undefined.');
 		}
 		this.addValidator();

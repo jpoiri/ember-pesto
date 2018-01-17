@@ -1,6 +1,8 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
+import { computed } from '@ember/object';
+import { isNone } from '@ember/utils';
 
-export default Ember.Mixin.create({
+export default Mixin.create({
 
 	/**
 	 * Sort the radio buttons by default.
@@ -11,10 +13,10 @@ export default Ember.Mixin.create({
 	 * Returns a list of localized sort items based on the itemSortProperty or itemLabelProperty
 	 * @returns {array}
 	 */
-	sortedItems: Ember.computed('i18n.locale', 'items', 'itemSortProperty', function () {
-		if (!Ember.isNone(this.get('items')) && this.get('sort') && !Ember.isNone(this.get('itemSortProperty'))) {
+	sortedItems: computed('i18n.locale', 'items', 'itemSortProperty', function () {
+		if (!isNone(this.get('items')) && this.get('sort') && !isNone(this.get('itemSortProperty'))) {
 			return this.get('items').sortBy(this.get('itemSortProperty'));
-		} else if (!Ember.isNone(this.get('items')) && this.get('sort') && !Ember.isNone(this.get('itemLabelProperty'))) {
+		} else if (!isNone(this.get('items')) && this.get('sort') && !isNone(this.get('itemLabelProperty'))) {
 			return this.get('items').sortBy(this.get('itemLabelProperty'));
 		}
 		return this.get('items');

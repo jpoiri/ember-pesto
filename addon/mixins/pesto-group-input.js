@@ -1,9 +1,11 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
+import { computed } from '@ember/object';
+import { isNone } from '@ember/utils';
 
 /**
  * This mixin holds the common functionality between all group components.
  */
-export default Ember.Mixin.create({
+export default Mixin.create({
 	/**
 	 * Classes that will be passed to the component.
 	 */
@@ -18,8 +20,8 @@ export default Ember.Mixin.create({
 	 * Returns the name that will be passed to each checkbox, this required for parsley validation.
 	 * @returns {string}
 	 */
-	groupName: Ember.computed('name', function () {
-		if (!Ember.isNone(this.get('name'))) {
+	groupName: computed('name', function () {
+		if (!isNone(this.get('name'))) {
 			return this.get('name');
 		}
 		return this.get('elementId');
@@ -29,7 +31,7 @@ export default Ember.Mixin.create({
 	 * Returns the JQuery selector that matches the element to attach validation on.
 	 * @returns {string}
 	 */
-	validationSelector: Ember.computed(function () {
+	validationSelector: computed(function () {
 		return `#${this.elementId} input`;
 	}),
 
@@ -38,7 +40,7 @@ export default Ember.Mixin.create({
 	 */
 	actions: {
 		valueChangeAction(value) {
-			if (!Ember.isNone(this.get('valueChangeAction'))) {
+			if (!isNone(this.get('valueChangeAction'))) {
 				this.get('valueChangeAction')(value);
 			}
 		}

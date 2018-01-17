@@ -1,40 +1,55 @@
-import Ember from 'ember';
+import TextField from '@ember/component/text-field';
+import TextArea from '@ember/component/text-area';
+import Checkbox from '@ember/component/checkbox';
+import { isEmpty } from '@ember/utils';
 
 export function initialize() {
 
 	const DATA_ATTRIBUTE_PREFIX = 'data-';
 
-	Ember.TextField.reopen({
+	TextField.reopen({
 		init() {
 			this._super();
+			const attributeBindings = [];
 			Object.keys(this).forEach((key) => {
 				if (key.substr(0, 5) === DATA_ATTRIBUTE_PREFIX) {
-					this.get('attributeBindings').push(key);
+					attributeBindings.push(key);
 				}
 			});
+			if (!isEmpty(attributeBindings)) {
+				this.set('attributeBindings', this.get('attributeBindings').concat(attributeBindings));
+            }
 		}
 	});
 
-    Ember.Checkbox.reopen({
+    Checkbox.reopen({
 		init() {
 			this._super();
+			const attributeBindings = [];
 			Object.keys(this).forEach((key) => {
 				if (key.substr(0, 5) === DATA_ATTRIBUTE_PREFIX) {
-					this.get('attributeBindings').push(key);
+					attributeBindings.push(key);
 				}
 			});
+			if (!isEmpty(attributeBindings)) {
+                this.set('attributeBindings', this.get('attributeBindings').concat(attributeBindings));
+            }
 		}
 	});
 
 
-	Ember.TextArea.reopen({
+	TextArea.reopen({
 		init() {
 			this._super();
+			const attributeBindings = [];
 			Object.keys(this).forEach((key) => {
 				if (key.substr(0, 5) === DATA_ATTRIBUTE_PREFIX) {
-					this.get('attributeBindings').push(key);
+					attributeBindings.push(key);
 				}
 			});
+			if (!isEmpty(attributeBindings)) {
+                this.set('attributeBindings', this.get('attributeBindings').concat(attributeBindings));
+            }
 		}
 	});
 }
